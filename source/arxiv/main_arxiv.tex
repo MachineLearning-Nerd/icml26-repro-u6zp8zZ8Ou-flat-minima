@@ -1,0 +1,1196 @@
+\documentclass[11pt]{article}
+
+\usepackage{fix-cm}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\newcommand{\coef}{c}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{etoolbox}
+\usepackage{amssymb}
+\newcommand{\tail}{\rad}
+\newcommand{\margin}{\gamma}
+\usepackage{verbatim}
+\usepackage{tabto}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{fancyhdr}
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{xparse}
+
+\usepackage[font=small]{caption}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+
+\usepackage[extdef=true]{delimset}
+\usepackage[capitalize]{cleveref}
+\crefname{claim}{Claim}{Claims}
+\crefname{assumption}{Assumption}{Assumptions}
+
+
+\usepackage{tkthm}
+\usepackage{tkdefs}
+\usepackage{titlesec}
+\titleformat*{\paragraph}{\bfseries\itshape}
+
+\setlength{\topsep}{\medskipamount}
+
+\declaretheoremstyle[
+	    spaceabove=\topsep, 
+	    spacebelow=\topsep, 
+	    headfont=\normalfont\bfseries,
+	    bodyfont=\normalfont\itshape,
+	    notefont=\normalfont\bfseries,
+	    notebraces={(}{)},
+	    postheadspace=0.33em, 
+	    headpunct={.},
+	   %
+    ]{theorem}
+\declaretheorem[style=theorem]{theorem}
+
+\declaretheoremstyle[
+	    spaceabove=\topsep, 
+	    spacebelow=\topsep, 
+	    headfont=\normalfont\bfseries,
+	    bodyfont=\normalfont,
+	    notefont=\normalfont\bfseries,
+	    notebraces={(}{)},
+	    postheadspace=0.33em, 
+	    headpunct={.},
+	   %
+    ]{definition}
+
+\let\proof\undefined
+\declaretheoremstyle[
+        spaceabove=\topsep, 
+        spacebelow=\topsep, 
+        headfont=\normalfont\bfseries,
+        bodyfont=\normalfont,
+        notefont=\normalfont\bfseries,
+        notebraces={}{},
+        postheadspace=0.33em, 
+        qed=$\blacksquare$, 
+        headpunct={.},
+    ]{proofstyle}
+\declaretheorem[style=proofstyle,numbered=no,name=Proof]{proof}
+
+ \usepackage{bbm}
+\declaretheoremstyle[
+	    spaceabove=\topsep, 
+	    spacebelow=\topsep, 
+	    headfont=\normalfont\bfseries,
+	    bodyfont=\normalfont\itshape,
+	    notefont=\normalfont\bfseries,
+	    notebraces={(}{)},
+	    postheadspace=0.33em, 
+	    headpunct={.},
+	   %
+    ]{theorem}
+
+
+
+		
+\declaretheorem[style=theorem,name=Lemma]{lemma}
+\declaretheorem[style=theorem,name=Corollary]{corollary}
+\declaretheorem[style=theorem,name=Claim]{claim}
+\declaretheorem[style=theorem,name=Proposition]{proposition}
+\declaretheorem[style=theorem,name=Fact]{fact}
+\declaretheorem[style=theorem,name=Observation]{observation}
+\declaretheorem[style=theorem,name=Conjecture]{conjecture}
+
+\declaretheorem[style=theorem,numbered=no,name=Lemma]{lemma*}
+\declaretheorem[style=theorem,numbered=no,name=Corollary]{corollary*}
+\declaretheorem[style=theorem,numbered=no,name=Proposition]{proposition*}
+\declaretheorem[style=theorem,numbered=no,name=Claim]{claim*}
+\declaretheorem[style=theorem,numbered=no,name=Fact]{fact*}
+\declaretheorem[style=theorem,numbered=no,name=Observation]{observation*}
+\declaretheorem[style=theorem,numbered=no,name=Conjecture]{conjecture*}
+
+\declaretheorem[style=definition,name=Definition]{definition}
+\declaretheorem[style=definition,name=Assumption]{assumption}
+\declaretheorem[style=definition,name=Remark]{remark}
+\declaretheorem[style=definition,name=Example]{example}
+\declaretheorem[style=definition,name=Question]{question}
+
+\declaretheorem[style=definition,numbered=no,name=Definition]{definition*}
+\declaretheorem[style=definition,numbered=no,name=Assumption]{assumption*}
+\declaretheorem[style=definition,numbered=no,name=Remark]{remark*}
+\declaretheorem[style=definition,numbered=no,name=Example]{example*}
+\declaretheorem[style=definition,numbered=no,name=Question]{question*}
+
+
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{amssymb, amsfonts}
+\usepackage{verbatim}
+\usepackage{tabto}
+\RequirePackage{thmtools}
+\RequirePackage[capitalize]{cleveref}
+\newcommand{\samethanks}[1][\value{footnote}]{\footnotemark[#1]}
+
+
+
+\RequirePackage{crossreftools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\setlist{
+    itemsep=0.0ex,
+    topsep=0.5ex,
+    parsep=0.5ex
+}
+
+\newcommand{\fsmax}{F_S^{\rad}}
+\usepackage{fancyhdr}
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage{footmisc}
+\usepackage{xparse}
+\RequirePackage{crossreftools}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+\newcommand{\rad}{r}
+\makeatletter
+\renewenvironment{proof}[1][]{%
+  \par\noindent\textbf{\upshape Proof%
+  \if\relax\detokenize{#1}\relax\else\ #1\fi}\ %
+}{\jmlrQED}
+\makeatother
+\usepackage[extdef=true]{delimset}
+\usepackage[capitalize]{cleveref}
+\crefname{subsub}{Appendix}{Appendix}
+
+
+\let\proof\undefined
+\declaretheoremstyle[ 
+        spaceabove=\topsep, 
+        spacebelow=\topsep, 
+        headfont=\normalfont\itshape,
+        bodyfont=\normalfont,
+        notefont=\normalfont\itshape,
+        notebraces={}{},
+        postheadspace=0.33em, 
+        qed=$\square$, 
+        headpunct={.},
+    ]{proofstyle}
+\declaretheorem[style=proofstyle,numbered=no,name=Proof]{proof}
+
+
+\crefname{claim}{Claim}{Claims}
+\crefname{assumption}{Assumption}{Assumptions}
+
+
+\usepackage{tkdefs}
+
+\usepackage{titlesec}
+\titleformat*{\paragraph}{\bfseries\itshape}
+
+ \usepackage{bbm}
+\usepackage{xcolor}
+\usepackage{multirow}
+
+\newcommand{\R}{\mathbb{R}}
+\crefname{claim}{Claim}{Claims}
+\crefname{assumption}{Assumption}{Assumptions}
+\title{Flat Minima and Generalization: \\ Insights from Stochastic Convex Optimization}
+
+\author{%
+    Matan Schliserman\thanks{\emph{Equal contribution}.}\,\,\thanks{Blavatnik School of Computer Science and AI, Tel Aviv University; \texttt{schliserman,shirav@mail.tau.ac.il}.}
+    \and%
+    Shira Vansover-Hager\samethanks[1] \samethanks[2]
+    \and%
+    Tomer Koren\thanks{Blavatnik School of Computer Science and AI, Tel Aviv University, and Google Research; \texttt{tkoren@tauex.tau.ac.il}.}
+}
+
+
+\usepackage[authoryear,round]{natbib}
+\bibliographystyle{plainnat}
+
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+Understanding the generalization behavior of learning algorithms is a central goal of learning theory. A recently emerging explanation is that learning algorithms are successful in practice because they converge to flat minima, which have been consistently associated with improved generalization performance. 
+In this work, we study the link between flat minima and generalization in the canonical setting of stochastic convex optimization with a non-negative, $\beta$-smooth objective.
+Our first finding is that, even in this fundamental and well-studied setting, flat empirical minima may incur trivial $\Omega(1)$ population risk while sharp minima generalizes optimally.
+Then, we show that this poor generalization behavior extends to two natural ''sharpness-aware'' algorithms originally proposed by \citet{foret2021sharpness}, designed to bias optimization toward flat solutions: Sharpness-Aware Gradient Descent (SA-GD)
+and Sharpness-Aware Minimization (SAM).
+For SA-GD, which performs gradient steps on the maximal loss in a predefined neighborhood, we prove that while it successfully converges to a flat minimum at a fast rate, the population risk of the solution can still be as large as~$\Omega(1)$, indicating that even flat minima found algorithmically using a sharpness-aware gradient method might generalize poorly.
+For SAM, a computationally efficient approximation of SA-GD based on normalized ascent steps, we show that although it minimizes the empirical loss, it may converge to a sharp minimum and also incur population risk $\Omega(1)$. 
+Finally, we establish population risk upper bounds for both SA-GD and SAM using algorithmic stability techniques.
+\end{abstract} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Introduction}
+\label{sec:intro}
+Understanding the generalization behavior of modern learning algorithms has become a central focus of theoretical machine learning. This interest is motivated by the observation that in heavily overparameterized models, the training objective admits many global optima that perfectly fit the data \citep{zhang2017understanding}; yet, while some of these minimizers generalize poorly, others---typically those to which common optimization algorithms converge---generalize well~\citep{neyshabur2014search, neyshabur2017exploring,zhang2017understanding}. These observations naturally raise the fundamental question of what theoretical and algorithmic conditions ensure that minimizers generalize well.
+
+One prominent condition that has received significant attention is the \emph{flatness} of the minimum. Flat minima, solutions that that remain (approximate) minimizers under small parameter perturbations, have been consistently associated with better generalization, while sharper, non-flat minima are linked with worse out-of-sample performance~\citep{keskar2016large,dziugaite2018entropy,jiang2019fantastic,singh2025avoiding}. This insight has motivated a variety of methods that encourage solutions in flat regions of the loss landscape, rather than sharp ones~\citep{wu2020adversarial,foret2021sharpness,kwon2021asam,zheng2021regularizing,du2021efficient,kim2022fisher,zhuang2022surrogate,liu2022towards,du2022sharpness,zhao2022randomized,andriushchenko2023sharpness,li2023enhancing,jiang2023adaptive, xie2024sampa,tahmasebi2024universal,li2024friendly}.
+In particular, \citet{foret2021sharpness} introduced the Sharpness-Aware Minimization (SAM) approach, which reformulates the standard optimization problem as minimizing the \emph{Sharpness-Aware Empirical Risk (SAER)}, defined as 
+$
+    \fsmax(w) =
+    \max_{\|v\| \leq \rad} F_S(w + v)
+$
+where $F_S$ is the empirical risk over a sample $S$ and $\rad$ is a \emph{perturbation radius} parameter. This approach encourages solutions robust to parameter perturbations, thus corresponding to flatter minima.
+
+Despite the success of SAM, as well as of other sharpness-aware methods~\citep{bahri2021sharpness,chen2021vision,foret2021sharpness,kaddour2022flat,lee2023plastic}, 
+the theoretical link between flatness and generalization remains not fully understood. 
+While some works show that in certain non-convex regimes the flatness 
+of an arbitrary minimizer does not affect generalization~\citep[e.g.,][]{dinh2017sharp,wen2023sharpness}, it is unclear whether this also holds for concrete optimization methods that explicitly aim to find flat minima. For such methods, existing analyses either provide only empirical evidence 
+\citep{andriushchenko2023modern,wen2023sharpness,ramasinghe2023much}, establish problem parameters-dependent generalization 
+bounds~\citep{neyshabur2017exploring,wei2019data,wei2019improved,foret2021sharpness,norton2023diametrical}, or restrict attention to quadratic or strongly convex objectives~\citep{chen2024does,tan2025stabilizing}. 
+As a result, it remains unclear whether and under which conditions finding a flat empirical minimum using such 
+algorithms does in fact lead to improved generalization, or how the generalization guarantees of these practical methods compare to those of standard optimization algorithms such as gradient descent (GD) and stochastic gradient descent (SGD).
+
+
+In this paper, we aim to gain insight into the relationship between flatness and generalization by studying the above questions within the framework of Stochastic Convex Optimization (SCO): a fundamental and extensively studied theoretical model widely used to analyze stochastic optimization algorithms. 
+SCO is particularly well-suited for such a study, as it is well-known that SCO problems can admit multiple empirical minimizers, not all of which are guaranteed to generalize well~\citep{shalev2010learnability,feldman2016generalization}.
+We focus on the regime where the loss functions are non-negative and $\beta$-smooth;%
+\footnote{A differentiable function $f: \mathbb{R}^d \to \mathbb{R}$ is $\beta$-smooth if $\|\nabla f(v) - \nabla f(u)\|_{2} \leq \beta \|v - u\|_2$ for all $u, v \in \mathbb{R}^d$.} 
+in this setting, gradient methods such as GD and SGD are known to generalize optimally~\citep{hardt2016train,nikolakakis2022beyond}, as opposed to the wider convex non-smooth setting~\citep{amir2021sgd, schliserman2024dimension,livni2024sample,vansover2025rapid}.  
+Within this SCO framework, we impose the additional assumption that $f$ admits at least one flat minimum, i.e., a minimizer such that the loss remains constant within a ball of radius $\rho$ around it (we call such a minimizer a \emph{$\rho$-flat minimum}). %
+To capture this formally, we introduce a strong flatness condition (see \cref{ass:flat}), and analyze the generalization performance of several natural algorithms under this condition. 
+
+
+
+
+Our contributions shed light on the extent to which flatness relates to generalization in SCO.
+We construct examples showing that flat empirical minima can generalize poorly, demonstrating that minimizing the Sharpness-Aware Empirical Risk (SAER) does not in itself guarantee good generalization.
+First, we present an SCO instance in which there exists a flat empirical risk minimizer (ERM) that generalizes poorly, while within the same setting, there exists a sharp ERM that generalizes well.
+Then, we show that this poor generalization behavior extends to two natural ``sharpness-aware'' algorithms originally proposed by \citet{foret2021sharpness}, designed to bias optimization toward flat solutions: Sharpness-Aware Gradient Descent (SA-GD)%
+\footnote{This algorithm was introduced in~\citep{foret2021sharpness} without being explicitly named, referred here as SA-GD for conciseness.}
+and Sharpness-Aware Minimization (SAM). 
+For SA-GD, we prove that it indeed converges to a flat minimum, however, there are instances where it converges to solutions that generalize strictly worse compared to those found by standard GD and SGD, which are known to generalize optimally in the same setting. These results indicate that even flat minima found algorithmically using a sharpness-aware gradient method might generalize poorly.
+For SAM we observe a sharper contrast: although it minimizes the empirical risk, it does not necessarily minimize sharpness as it may converge to a non-flat minimum, and similarly to SA-GD, we show it might converge to minima with poor generalization compared to (S)GD. 
+These results provide insight into possible limitations of sharpness-aware approaches in terms of the flatness of the solution found and its out-of-sample performance relative to (S)GD. Finally, we derive new population loss upper bounds for SA-GD and SAM. Compared to (S)GD, these bounds include an additional dominant term that nearly matches our lower bounds. 
+
+\subsection{Summary of contributions}
+
+In more detail, we make the following technical contributions. 
+(The bounds presented below describe the dependence on the number of iterations $T$, number of training examples $n$, step size $\eta$, smoothness parameter $\beta$, flatness radius of the loss minimizer $\rho$, and perturbation size $\rad$.)
+
+\begin{enumerate}[label=(\roman*),leftmargin=!,parsep=0pt,topsep=0pt]
+\item We introduce a strong flatness condition assuming the existence of a perfectly flat minimum of radius~$\rho$. %
+For Sharpness-Aware ERM (SA-ERM), even under this strong condition, we construct a smooth SCO problem where the empirical risk admits a flat minimizer with population risk~$\Omega(1)$, while a non-flat minimizer achieves optimal generalization (\cref{thm: bad flat erm}).
+
+\item 
+For the SA-GD algorithm~\citep{foret2021sharpness}, 
+we prove an empirical optimization bound $O(\ifrac{1}{\eta T} + \max(\rad-\rho,0)^2)$, implying that with $\eta\simeq 1/\beta$ and $\rad\simeq\rho$, SA-GD converges to a $\Theta(\rho)$-flat minimum at rate $O(1/T)$. 
+In contrast, we establish a lower bound of $\Omega(\eta^2(\rad-\rho)^2T)$ on the population loss of SA-GD for $\rad\gtrsim\rho$, showing that SA-GD may generalize poorly even when converging to flat minima. In particular, tuning the algorithm with $\eta\simeq 1/\beta$ and $\rad\gtrsim\rho+1/\sqrt{T}$ can lead to a population risk of $\Omega(1)$ (\cref{thm:max_opt,thm: gen max sam}). Finally, using algorithmic stability, we prove a population upper bound for SA-GD under $\rho$-flatness (\cref{thm:max_gen_upper}). 
+This bound nearly matches our lower bound, and compared to vanilla GD and SGD it contains an additional dominant term  $O(\eta^2 \rad^2 T)$.
+
+
+\item For SAM~\citep{foret2021sharpness}, we obtain the same bound $O(1/(\eta T) + \max(\rad-\rho,0)^2)$ for the empirical risk, but also show a convex, smooth case where SAM converges to a sharp minimum, i.e., it fails to minimize the SAER. As for generalization, we establish a population lower bound of $\Omega(\eta^2\rad^2T)$ in the case $\rho = 0$, which implies a trivial risk of $\Omega(1)$ when $\eta\simeq1/\beta$ and $\rad\gtrsim1/\sqrt{T}$, or when $\eta\simeq1/\sqrt{T}$ and $\rad=\Theta(1)$, regimes where SAM minimizes the empirical risk (\cref{thm:asc_opt_upper,thm:ascent_opt_non_flate,thm: gen asc sam}). As with SA-GD, we prove a population upper bound for SAM under $\rho$-flatness, achieving the same rate as SA-GD (\cref{thm:ascent_gen_upper}).
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+To our knowledge, these results are the first to formally address the connection between flatness and generalization in the convex regime, and they bear some interesting implications. 
+On the positive side, they provide the first indication that sharpness-aware methods converge at a dimension-independent fast $O(1/T)$ rate in terms of empirical risk for general convex optimization, despite the SAER objective being non-smooth, and this convergence can further benefit from flatness of the objective. %
+On the negative side, our results show that even in the basic convex and smooth regime, a sharp empirical minimum may generalize better than a flat one, and this can occur when the flat empirical risk minimizer is selected arbitrarily, e.g., by the SA-ERM algorithm, or algorithmically, by the SA-GD algorithm. Furthermore, our findings highlight that optimization methods explicitly designed to locate flat minima, such as SA-GD and SAM, may converge to solutions that generalize poorly. In contrast, standard gradient-based methods like GD and SGD are known to achieve optimal generalization in this setting when using the optimization-optimal step size $\eta \simeq 1/\beta$ \citep{lei2020fine,nikolakakis2022beyond}. 
+
+
+
+
+
+\subsection{Related work}
+\label{sec:related} 
+\paragraph{Flat minima and generalization.}
+
+The conjectured connection between flat minima and generalization dates back to \citet{hochreiter1997flat}. Since then, a large body of empirical and theoretical work has suggested that flatter minima correlate with, or even guarantee, better generalization performance \cite{keskar2016large,dziugaite2017computing,neyshabur2017exploring,wu2018sgd,Jastrzebski2017minima,jiang2019fantastic,wei2019data,wei2019improved,blanc2020implicit,haochen2021shape,foret2021sharpness,damian2021label,li2021happens,ma2021linear,nacson2022implicit,wei2022statistically,lyu2022understanding,norton2023diametrical,wu2023implicit,ding2024flat}. However, several works caution against interpreting flatness as a universal predictor of generalization \citep{dinh2017sharp,andriushchenko2023modern,wen2023sharpness,ramasinghe2023much}. Notably, from a theoretical perspective, \citet{dinh2017sharp} showed that in ReLU networks sharpness can be arbitrarily altered through reparameterization without affecting the learned function or its generalization, implying that common flatness measures are not parameterization-invariant and may therefore be misleading. 
+
+More recently, \citet{wen2023sharpness} examined two-layer ReLU networks defining flatness as the trace of the Hessian. Using this architecture and notion of flatness they identified scenarios where flat minima fail to generalize, while sharpness-minimization algorithms such as SAM may still succeed, although their analysis of SAM was only empirical. Our results go beyond both works: unlike \cite{dinh2017sharp}, we give explicit constructions where flat minimizers fail while sharp minimizers generalize perfectly, directly challenging the conjecture itself, and unlike \cite{wen2023sharpness}, we establish this phenomenon already in the fundamental convex $\beta$-smooth setting and under much stronger flatness assumptions. Furthermore we provide theoretically provable lower bounds on the generalization of SAM, offering a more rigorous understanding of its limitations.
+
+\paragraph{Convergence rates of SAM.}
+Many works on the convergence of SAM analyze a variant of SAM that does not use gradient normalization during the ascent step \citep{andriushchenko2022towards,behdin2023sharpness,agarwala2023sam,kim2023stability}. 
+This variant does not match practical implementations of SAM, where normalization is typically used \citep{si2023practical}, and more recent work showed that normalization improves SAM’s performance \citep{dai2024crucial}. 
+Our work considers SAM with normalization and provides more practical bounds. 
+Another line of research studies the implicit bias of SAM and its variants under infinitesimal step sizes \citep{wen2022does,andriushchenko2022towards}, while we focus on the practical discrete setting. 
+
+In more specific cases, \citet{bartlett2023dynamics} gave convergence rates for SAM on convex quadratics, whereas our work addresses general smooth convex objectives. 
+Recent works also consider smooth nonconvex objectives with decaying or sufficiently small $\rad$ \citep{mi2022make,zhuang2022surrogate,sun2024adasam}, but such assumptions differ from practice, where $\rad$ might be a constant. 
+Our bounds instead cover smooth convex functions and hold for any $\rad$, including large values. 
+Finally, \citet{si2023practical} derived convergence guarantees in deterministic and stochastic regimes, but in the smooth convex case they only proved convergence to stationary points, leaving convergence to global minima as an open problem. 
+We close this gap by providing the first rates of convergence to global minima for SAM on general smooth convex objectives, and we are the first to incorporate the true flatness of the objective into the convergence analysis.  
+
+\paragraph{Generalization of SAM.}  
+\citet{foret2021sharpness}, who originally introduced SAM, established PAC-Bayes bounds to explain its generalization. 
+These bounds are dimension dependent and may be vacuous in many scenarios. 
+More recently, \citet{tan2025stabilizing} analyzed the smooth and strongly convex setting, comparing the algorithmic stability of SAM and SGD.  
+\citet{chen2024does} studied generalization from a different angle, comparing the conditions for benign overfitting under SGD and SAM in two-layer convolutional ReLU networks. 
+In contrast to these works, we establish the first dimension-independent generalization bounds for the broad class of smooth convex (but not strongly convex) objectives, together with the first lower bounds on the generalization performance of SAM in this setting.  
+
+
+
+\paragraph{Generalization in SCO.}
+Stochastic convex optimization is a fundamental theoretical framework for analyzing widely used optimization algorithms, where the loss function is assumed to be convex and Lipschitz. In this setting, prior work \citep{shalev2010learnability,feldman2016generalization,carmon2023sample} have shown that, although learning in this framework is possible (e.g., via Stochastic Gradient Descent), empirical risk minimization (ERM) may fail (even under additional assumptions such as smoothness and realizability), since uniform convergence does not generally hold. 
+In our work, we focus on flat ERMs, namely minimizers of the SAER, and demonstrate that even when the minima are flat, they may still generalize poorly.
+Beyond ERM, several natural algorithms such as full-batch Gradient Descent and multi-pass Stochastic Gradient Descent have also been shown to fail in this setting \citep{amir2021sgd,livni2024sample,schliserman2024dimension,vansover2025rapid}.
+All of these works focus on the non-smooth regime and establish lower bounds in that setting. In contrast, our work studies the generalization of Sharpness-Aware Minimization algorithms in smooth and realizable SCO, and we show that even under these strong assumptions, SA-GD and SAM may still generalize poorly.
+
+
+\paragraph{Smooth SCO with low noise.}
+The problem of smooth stochastic convex optimization with low noise as been extensively studied. \cite{srebro2010smoothness} established that Stochastic Gradient Descent (SGD) attains a risk bound of $O\left(\ifrac{1}{n}\right)$ in this setting. This result was recently extended by \cite{attia2025fast} to the last iterate of SGD. 
+In our work, we demonstrate that in the deterministic setting, SA-GD and SAM also attain these optimal rates when applied to smooth loss functions. In addition, for SA-GD we prove an even stronger result: under an additional flatness condition, the method achieves the same fast rates for convergence with respect to the SAER $\fsmax$, a function that is generally non-smooth.
+From a generalization perspective, recent work \citep{lei2020fine, nikolakakis2022beyond, schliserman22a, evron2025better, attia2025fast} has used stability arguments to show that gradient methods such as GD and SGD, both with and without replacement and with $T=n$, achieve an optimal risk of $O(1/n)$ in this setting. Our work shows that, in contrast to those algorithms, SA-GD and SAM may generalize poorly, even in smooth and realizable SCO.
+
+
+
+
+
+
+
+
+\section{Problem setup}
+
+
+We study the generalization properties of flat minima in the framework of (smooth) \emph{Stochastic Convex Optimization} (SCO). 
+In this setting, there exists a population distribution $\mathcal{D}$ over an instance space $\mathcal{Z}$, and a loss function 
+$
+f : W \times \mathcal{Z} \to \mathbb{R}
+$
+defined on a convex domain $W \subseteq \mathbb{R}^d$. 
+For any fixed instance $z \in \mathcal{Z}$, the function $f(\cdot, z)$ is assumed to be non-negative, convex, and $\beta$-smooth ($\beta>0$) with respect to its first argument $w$.
+The learning goal is to minimize the \emph{population risk}, defined as the expected loss over $\mathcal{D}$,
+\begin{equation}
+\label{def:population_risk}
+    F(w) \coloneqq \mathbb{E}_{z \sim \mathcal{D}}[f(w,z)].
+\end{equation}
+Since $\mathcal{D}$ is unknown, learning algorithms instead use a finite i.i.d.\ sample $S = \{z_1, \ldots, z_n\}$ drawn from $\mathcal{D}$. 
+A common approach is to minimize the \emph{empirical risk} over $S$, given by
+\begin{equation}
+\label{def:empirical_risk}
+\textstyle
+    F_S(w) \coloneqq \frac{1}{n}\sum_{i=1}^n f(w,z_i).
+\end{equation}
+A main focus of this paper is on objective functions that admit \emph{flat minima}, formalized as follows.
+\begin{definition}[$\rho$-flatness]
+\label{ass:flat} \upshape
+We say that $w^\star \in \mathbb{R}^d$ is a \emph{$\rho$-flat minimum} (for $\rho \geq 0$) of a non-negative function $f:\R^d \to \R$ if for every $w \in \R^d$ with $\|w - w^\star\| \leq \rho$, it holds that $f(w) = 0$.  
+If such a $\rho$-flat minimum exists for $f$, we also say that $f$ is $\rho$-flat; the maximal $\rho$ satisfying this condition is called the \emph{flatness radius} of $f$. 
+\end{definition}
+Note that this is a very strong notion of flatness: it in particular implies that the empirical minimization problem with a $\rho$-flat $F_S$ is \emph{realizable} (i.e., there exists $w^\star$ such that $f(w^\star,z_i)=0$ for almost all $z_i \in S$) and further that $F_S$ is \emph{perfectly flat} in a neighborhood of $w^\star$.
+Since our goal is to understand the relationship between flatness and generalization, we find it more informative to analyze this connection under the most stringent and unambiguous condition of flatness. In particular, imposing such a condition makes any negative results (i.e., lower bounds) only \emph{stronger}, since they hold even under the most favorable notion of flatness.
+
+With the above notion of flatness in mind, we focus on three natural algorithms:
+
+\begin{itemize}[leftmargin=*,parsep=0pt,topsep=0pt]
+\item 
+\emph{\bfseries Sharpness-Aware Empirical Risk Minimization (SA-ERM).}
+The first (meta-)algorithm is a natural, ``Sharpness-Aware'' variant of ERM that computes, given a parameter $\rad>0$: 
+\begin{equation} \label{erm_update_rule} 
+\begin{alignedat}{2}
+    &w_S  \in \arg\min_{w \in W} \, \fsmax(w),
+    \\ &\text{where}\quad
+    \fsmax(w)  = \max_{v :~ \|v\|\leq \rad} F_S(w+v).
+\end{alignedat}
+\end{equation}
+Namely, it outputs a minimizer of the \emph{sharpness-aware empirical risk} (SAER) with radius $\rad$, which we denote by $\fsmax$. 
+The idea here is that, if the empirical risk $F_S$ is $\rho$-flat and $\rad \leq \rho$, then \emph{any} minimizer of the SAER is also a $\rad$-flat minimum of the original empirical risk $F_S$.
+
+\item 
+\emph{\bfseries Sharpness-Aware Gradient Descent (SA-GD).}
+The second algorithm is a first-order instantiation of SA-ERM, proposed in \citep{foret2021sharpness}, obtained by running gradient descent on the SAER objective.
+Starting from $w_1 \in W$ and given parameters $\eta,\rad>0$, it takes steps for $t=1,\ldots,T$ of the form:
+\begin{equation} \label{gd_update_rule} 
+\begin{alignedat}{2}
+     &w_{t+1}  = w_t - \eta \nabla F_S(w_t+v_t), 
+    \\ &\text{where}\quad
+    v_t  \in \argmax_{v :~ \|v\|\leq \rad} F_S(w_t+v).
+\end{alignedat}
+\end{equation}
+
+\item 
+\emph{\bfseries Sharpness-Aware Minimization (SAM).}
+The third algorithm is the original SAM algorithm proposed in  \cite{foret2021sharpness} as a computationally efficient approximation of SA-GD. SAM circumvents the explicit maximization over $v$ in \cref{gd_update_rule} by replacing $v_t$ with the normalized gradient at $w_t$.
+Thus, starting from $w_1 \in W$ and given $\eta,\rad>0$, the updates of SAM for $t=1,\ldots, T$ take the form
+\begin{equation} \label{asc_update_rule}  
+    w_{t+1} = w_t - \eta \nabla F_S\!\left(w_t + \rad \frac{\nabla F_S(w_t)}{\|\nabla F_S(w_t)\|}\right)
+    .
+\end{equation}
+
+\end{itemize}
+\paragraph{Notations.} We denote by $\|\cdot\|$ the $\ell_2$ norm. 
+The symbol $\odot$ represents element-wise multiplication, i.e.,
+$(x \odot y)(i) = x(i)\, y(i).$
+Finally, we write $[x]_+$ for the element-wise ReLU function, defined as $[x]_+(i) = \max\{x(i), 0\}$.
+
+
+\input{technical_arxiv}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Discussion and Limitations}
+
+In this work, we study the relationship between flat minima and generalization. We focus on the fundamental convex and smooth setting and provide the first upper and lower bounds on both optimization and generalization for three natural, extensively studied sharpness-aware methods: SA-ERM, SA-GD, and SAM.
+To the best of our knowledge, our work provides the first provable separation showing that, even in convex problems, sharpness-aware algorithms can exhibit worse generalization than standard GD and SGD, and that explicitly seeking flat minima does not necessarily improve performance and can, in fact, lead to worse outcomes. 
+
+\paragraph{Limitations.}
+It is important to note that our separation between GD and SGD versus SA-GD and SAM is shown in a worst case setting. It relies on a specific loss function, data distribution, gradient oracle, and particular hyperparameter choices such as large step sizes. 
+This does not mean that sharpness aware methods always perform worse than GD or SGD. Rather, it shows that explicitly aiming for flat minima does not necessarily improve population risk performance (in the sense that establishing stronger risk upper bounds is impossible) and can sometimes even hurt it significantly.
+In addition, our analysis is limited to the convex setting and uses a strong notion of flatness. These assumptions actually make our lower bounds stronger, since they show that even in this simple setting and under a very strict definition of flatness, targeting flat solutions can still lead to worse performance.
+
+\paragraph{Open questions and future work.}
+Although our work is the first to discuss formally the limitations of sharpness-aware minimization in SCO, many questions remain open. 
+Our lower-bounds constructions require a dimension that is exponential in the size of the training set, and reducing this dimensional dependence is an important open problem. Our result for SA-ERM shows that an arbitrary flat ERM solution may overfit, even though our construction also admits flat ERMs with good generalization. An interesting open question is whether one can construct instances in which all flat ERM solutions generalize poorly. Another direction for future work is to close the remaining gap between our upper and lower bounds. Further, our lower bounds for SA-GD and SAM focus on regimes where the perturbation radius of the algorithm exceeds the true flatness radius of the loss, understanding what happens when the perturbation radius is smaller than or comparable to the flatness radius remains open. Finally, it would be interesting to investigate whether similar phenomena arise for other variants of SAM.
+
+
+
+\section*{Acknowledgments}
+
+This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No.\ 101078075).
+Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council. Neither the European Union nor the granting authority can be held responsible for them.
+This work received additional support from the Israel Science Foundation (ISF, grant numbers 2549/19 and 3174/23), a grant from the Tel Aviv University Center for AI and Data Science (TAD) and
+from the Len Blavatnik and the Blavatnik Family foundation.
+
+In addition, this work was partially supported by the TAD Excellence Program for Doctoral Students in Artificial Intelligence and Data Science from the Tel Aviv University Center for AI and Data Science (TAD).
+
+
+
+
+
+
+
+
+\bibliography{ref}
+\newpage
+\appendix
+
+
+
+
+
+
+\section{Proofs for Section~\ref{sec:sa_erm}}\label{sec:proof_main} \label{sec:proof_sa_erm}
+\begin{proof}[of \cref{thm: bad flat erm}]
+Let $d= 2^n + 1,\;\mathcal{Z}= \{0,1\}^{2^n}$ and let $\mathcal{D}$ be the uniform distribution over $\mathcal{Z}$. Consider the following function: 
+$$f(w,z) = \frac{1}{2}\max\left\{ \sqrt{\sum_{i=1}^{2^n} z(i)w(i)^2 + w(d)^2} - \rho,0 \right\}^2.$$
+We show that $f$ is convex, $1$-Lipschitz, $1$-smooth and has flatness radius $\rho$ in \cref{lemma: well defined}. Since the samples are uniform over $\{0,1\}^{2^n}$ we have that for a random training set $S = \{z_1, \dots, z_n\} \overset{\text{i.i.d.}}{\sim} \mathcal{D}^n$ with probability greater than $1-e^{-1} > \frac{1}{2}$, there exists an index $I \in [2^n]$ such that for every $z\in S, \; z(I) =0$. From now on we will assume the existence of this $I$ and denote $w^{(1)} = e_I$. We will show $w^{(1)} \in \arg\min_{w \in W} F_S^{\rad}(w)$. First we notice that: 
+$$F_S^{\rad}(w,z) \geq F_S(w + \text{sign}(w(d)) \cdot \rad e_{d}) \geq \frac{1}{2}\max\{\rad - \rho ,0\}^2. $$
+
+
+We will show that $w^{(1)}$ achieve that minimum. Indeed, from the choice of $I$, $F_S(e_I) = 0$, so for any $\|v\| \leq \rad,$
+\begin{align*}
+    F_S(e_I + v) & = \frac{1}{2} \max\left\{ \|(e_I + v) \odot z\| - \rho,0 \right\}^2 \\
+    & = \frac{1}{2} \max\left\{ \|v \odot z\| - \rho,0 \right\}^2 \\
+    & \leq \frac{1}{2} \max\left\{ \|v\| - \rho,0 \right\}^2 \leq \frac{1}{2} \max\left\{ \rad - \rho,0 \right\}^2,  
+\end{align*}
+which concludes the proof. Finally, since with probability $\frac{1}{2}$ a new sample $z'$ will hold $z'(I) = 1$:
+$$F(e_I) - F(w^\star) \geq \frac{1}{4} \cdot (1-\rho)^2 + \frac{1}{2} \cdot 0 \geq \frac{1}{16} = \Omega(1),$$
+where the last inequality holds since $\rho \leq \frac{1}{2}$.
+This concludes the results for $w^{(1)}$. For $w^{(2)}$ consider $w^{(2)} = \rho e_d$. It is easy to see $w^{(2)}$ is a minimum of $F_S$ and for any $\delta > 0$: 
+$$F_S^{\delta}(\rho e_d) \geq F_S((\rho + \delta)e_d) = \frac{1}{2} (\rho + \delta - \rho)^2 = \frac{\delta^2}{2},$$ 
+which shows $w^{(2)}$ is a sharp minimum. But,
+$$F(\rho e_I) - F(w^{\star}) = \frac{1}{2}\max\{\rho - \rho\}^2 - 0 = 0.$$
+which concludes the proof.
+\end{proof}
+
+
+\begin{lemma}\label{lemma: well defined}
+    Fix some $z \in [-1,1]^{d-1} \times \{1\}$, and $\rho \geq 0$. Define the following function: 
+    $$\phi_z(w) = \frac{1}{2}\left[ \|\left[w \odot z\right]_+\| - \rho\right]_+^2,$$
+    then $\phi_z$ is convex, $1$-Lipschitz, 1-smooth in the unit ball, and $\rho$-flat.
+\end{lemma}
+\begin{proof}[of \cref{lemma: well defined}] We will prove each property separately.
+
+\paragraph{Convexity.} Notice that $\|[w \odot z]_{+}\|$ is convex and the function $\psi(x) = \max\{x-\rho,0\}^2$ is convex and non-decreasing, hence the composition $\phi_z = \psi \circ \xi_z$ is convex. 
+
+\paragraph{Lipschitz continuity.} We will start by computing the gradient. 
+\begin{align*}
+    \|\nabla \phi_z(w)\| & = \left\|\frac{\left[\|[w \odot z]_+\| - \rho,0 \right]_+}{\|[w \odot z]_+\|} \cdot \left(z \odot [w\odot {z}]_+ \right)\right\| \\
+    & \leq \|z \odot [w \odot z]_+\| \leq \|z\|_{\infty} \|[w \odot z]_+\| \leq \|z\|_{\infty}\|w\| \\
+    & \leq \|w\| \leq 1, \tag{$z\in [-1,1]^d$}
+\end{align*}
+where the last inequality comes from the choice of the domain to be the unit ball.
+
+\paragraph{Smoothness.} For $x,y\in\mathbb{R}^d$,
+\begin{align*}
+    \|\nabla \phi_z(x)-\nabla \phi_z(y)\| & = \left\|\, z \odot \left(\frac{\big[\|x \odot z\|-\rho\big]_+}{\|x \odot z\|}\,[x \odot z]_+ - \frac{\big[\|y \odot z\|-\rho\big]_+}{\|y \odot z\|}\,[y \odot z]_+\right)\right\| \\
+    & \leq\|z\|_{\infty} \cdot  \left\| \frac{\big[\|x \odot z\|-\rho\big]_+}{\|x \odot z\|}\,[x \odot z]_+ - \frac{\big[\|y \odot z\|-\rho\big]_+}{\|y \odot z\|}\,[y \odot z]_+ \right\|\\
+    &  \leq \left\| \frac{\big[\|x \odot z\|-\rho\big]_+}{\|x \odot z\|}\,[x \odot z]_+ - \frac{\big[\|y \odot z\|-\rho\big]_+}{\|y \odot z\|}\,[y \odot z]_+ \right\|. \tag{$z\in[-1,1]^d$}
+\end{align*}
+Denote
+\[
+T(u):=\frac{[\|u\|-\rho]_+}{\|u\|}\,u,\qquad (T(0):=0),
+\]
+so the last norm is $\|T([x \odot z]_+)-T([y \odot z]_+)\|$.
+Note the identity
+$$
+T(u)=u-\Pi_{B_\rho}(u),\qquad B_\rho:=\{v\in \mathbb{R}^d:\|v\|\le \rho\},
+$$
+where $\Pi_{B_\rho}$ is the Euclidean projection onto $B_\rho$. Also, using the fact that Euclidean projection is firmly nonexpansive, for any $u,v \in \mathbb{R}^d$:
+\begin{align*}
+ \|T(u)-T(v)\|^2 & = \|\,u-\Pi_{B_\rho}(u) - (v -\Pi_{B_\rho}(v))\,\|^2 \\
+& = \|u - v\|^2 + \| \Pi_{B_\rho}(u) - \Pi_{B_\rho}(v)\|^2 - 2 \langle u-v , \Pi_{B_\rho}(u) - \Pi_{B_\rho}(v) \rangle \\
+& \leq \|u-v\|^2 + \| \Pi_{B_\rho}(u) - \Pi_{B_\rho}(v)\|^2 - 2 \| \Pi_{B_\rho}(u) - \Pi_{B_\rho}(v)\|^2\\
+& = \|u-v\|^2 - \| \Pi_{B_\rho}(u - \Pi_{B_\rho}(v)\|^2  \\
+& \leq \|u-v \|^2 
+\end{align*}
+Combining the inequalities we showed
+\begin{align*}
+   \|\nabla \phi_z(x)-\nabla \phi_z(y)\|  & \leq \|[x \odot z]_+ - [y \odot z]_+\|\\
+   & \leq \|x \odot z - y\odot z\| \tag{$[ \cdot]_+$ is 1-Lipschitz}\\
+   & \leq \|z\|_{\infty} \|x-y\| \leq \|x-y\| \tag{$z\in [-1,1]^d$}. 
+\end{align*}
+This concludes the proof for smoothness. 
+
+\paragraph{Flatness.} For $\rho$ flatness we can easily see that for any $\|v\|\leq \rho$ the following:
+$$\phi_z(0+v, \rho) = \phi_z(v,\rho) = \frac{1}{2}\left[|[v \odot z]_+\| - \rho\right]_+^2 \leq \frac{1}{2} [\|v\| -\rho]_+^2 = 0$$
+It is left to show that $\rho$ is the maximum flatness. Indeed, for every $w\in\arg\min \phi_z$: 
+$$\phi_z(w + \text{sign}(w(d))\cdot ce_{d}) \geq \frac{1}{2}\max\{c - \rho, 0\}^2.$$
+This implies that for $c > \rho$ we will have $\phi_z^{c} > 0$.
+\end{proof}
+
+\section{Proofs for Section ~\ref{sec:sa_gd}}\label{sec:proof_sa_gd}
+
+\subsection{Proof of Theorem~\ref{thm:max_opt}}\label{sec:proof_max_opt}
+
+In the proofs, we use the following standard lemma (e.g., \cite{srebro2010smoothness}).
+\begin{lemma} \label{lem:2L_descent}  
+For a non-negative and $\beta$-smooth $f:\R^d \to \R$, it holds that $\|\nabla
+f(w)\|^2 \leq 2\beta f(w)$ for all $w\in \R^d$.
+\end{lemma}
+
+ \begin{proof} [of \cref{lem:gen_regret}]
+     By \cref{ass:flat} we know that there exists a model $w^\star$ such that for every $\|v\| \leq \rho$, it holds that $F_S(w^{\star}) = F_S(w^{\star} + v)=0$. 
+By \cref{lem:2L_descent} and Young's inequality, since for every $t$, we know that $w_{t+1}=w_t-\eta\nabla F_S(w_t+v_t)$, it holds for every $\gamma>0$ that,
+\begin{align*}
+    &\|w_{t+1}-w^\star\|^2
+    \leq \|w_{t}-w^\star\|^2 -2\langle \eta \nabla F_S (w_{t}+v_{t}), w_{t}-w^\star \rangle
+    +\eta^2\|\nabla F_S (w_{t}+v_{t})\|^2
+     \\&\leq \|w_{t}-w^\star\|^2 -2\bigg\langle \eta \nabla F_S (w_{t}+v_{t}), w_{t}+v_t-w^\star - \min\{\rho,\|v_t\|\} \frac{v_t}{\|v_t\|} \bigg\rangle
+     \\
+     & \qquad +2\bigg\langle \eta \nabla F_S (w_{t}+v_{t}), v_t - \min\{\rho,\|v_t\|\} \frac{v_t}{\|v_t\|} \bigg\rangle  
+    +2\eta^2\beta F_S (w_{t}+v_{t}) - 2\eta^2\beta F_S (w^\star)
+    \\&\leq \|w_{t}-w^\star\|^2 -2\eta  F_S (w_{t}+v_{t}) + 2\eta F_S(w^\star)
+     +\frac{1}{\gamma}\eta ^2\|\nabla F_S (w_{t}+v_{t})\|^2+ \gamma\max\{\rad - \rho, 0\}^2
+    \\
+     & \qquad 
+     +2\eta^2\beta F_S (w_{t}+v_{t}) - 2\eta^2\beta F_S (w^\star).
+     \end{align*}
+     For $\gamma=4\eta\beta$ and $\eta\leq \frac1{4\beta}$, we get that, 
+     \begin{align*}
+     \|w_{t+1}-w^\star\|^2&\leq\|w_{t}-w^\star\|^2 -2\eta  F_S (w_{t}+v_{t}) + 2\eta F_S(w^\star)
+     +\frac{\eta}{4\beta}\|\nabla F_S (w_{t}+v_{t})\|^2\\&\qquad+ 4\eta\beta\max\{\rad - \rho, 0\}^2 
+    +2\eta^2\beta F_S (w_{t}+v_{t}) - 2\eta^2\beta F_S (w^\star)
+    \\&\leq \|w_{t}-w^\star\|^2 -2\eta  F_S (w_{t}+v_{t}) + 2\eta F_S(w^\star)
+     +\frac{\eta}{2} F_S (w_{t}+v_{t}) -  \frac{\eta}{2} F_S (w^\star) + 
+    \\&\qquad 4\eta\beta\max\{\rad - \rho, 0\}^2 +2\eta^2\beta F_S (w_{t}+v_{t}) - 2\eta^2\beta F_S (w^\star) \tag{\cref{lem:2L_descent}}
+    \\&\leq \|w_{t}-w^\star\|^2+ 4\eta\beta\max\{\rad - \rho, 0\}^2 -\eta  F_S (w_{t}+v_{t}) + \eta F_S(w^\star)
+\end{align*}
+Averaging from $1$ to $T$ and rearragining, we get the lemma.
+ \end{proof}
+
+
+\begin{proof} [of \cref{thm:max_opt}]
+Let $\Bar{v}=\arg\max_{\|v\|\leq \rad} F_S(v+\frac{1}{T}\sum_{t=1}^T w_t)$, thus, by \cref{lem:gen_regret}, using Jensen inequality, we get
+\begin{align*}
+ \fsmax\left(\frac{1}{T}\sum_{t=1}^T w_t\right)
+     &=\fsmax\left(\frac{1}{T}\sum_{t=1}^T w_t\right)-F_S(w^\star)
+    \\&=F_S\left(\frac{1}{T}\sum_{t=1}^T w_t+\bar{v}\right)-F_S(w^\star)
+    \\&\leq
+    \frac{1}{T}\sum_{i=1}^T F_S\left( w_t+\bar{v}\right)-F_S(w^\star)
+    \\&\leq
+    \frac{1}{T}\sum_{i=1}^T F_S\left( w_t+v_t\right)-F_S(w^\star)
+    \\&\leq 
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2.
+\end{align*}
+\end{proof}
+
+
+
+\subsection{Proof of Theorem~\ref{thm: gen max sam}}\label{sec:proof_gen_max_sam}
+
+\begin{proof}[of \cref{thm: gen max sam}]
+Let $\mathcal{Z}= \{-1,1\}^{2^n}$ and $\mathcal{D}$ to be the uniform distribution over $\mathcal{Z}$. For $i \in [T]$ denote $w^{(i)} = w[T\cdot (i-1) + 1 : T \cdot i]$. Consider the following function:
+\begin{align*}\label{eq: f for sam max with flatness}
+    f(w,z) & = \frac{1}{2}\max \left\{\sqrt{\sum_{i=1}^{2^n} \sum_{j=1}^T \max \left\{z(i)w^{(i)}(j),0 \right\}^2 + w(d)^2} - \rho,0 \right\}^2.
+\end{align*}
+we prove that $f$ is convex, $1$-Lipschitz, $1$-smooth and has flatness radius $\rho$ in \cref{lemma: well defined}. 
+From the definition of $\mathcal{D}$, for a sample $z \sim \mathcal{D}$ the coordinates $z(i)$ are i.i.d. uniform Bernoulli. For a random training set $S = \{z_1, \dots, z_n\} \overset{\text{i.i.d.}}{\sim} \mathcal{D}^n$, $S \subseteq \{0,1\}^{2^n}$, we have that with probability greater than $1-e^{-1} > \frac{1}{2}$, there exists a coordinate $I$ such that all the examples in the sample are $1$ on this coordinate, that is $z(I) = 1$ for all $z\in S$. Define the following SAM-gradient-oracle which at step $t$ outputs: 
+$$O_S^t(w) = \frac{1}{n} \sum_{i=1}^n \nabla f(w + e_{I_t},z_i),$$
+for $I_t = I + t - 1$. We will prove correctness by induction on $t$. For $w_1 = 0$ for every $\|v\| \leq \rad$ the following holds:
+\begin{align*}
+    \frac{1}{n} \sum_{k=1}^n f(0+v,z_k) &= \frac{1}{2n} \sum_{k=1}^n \max \left\{\sqrt{\sum_{i=1}^{2^n} \sum_{j=1}^T\max \left\{z_k(i) (0 + v^{(i)}(j)),0 \right\}^2} - \rho,0 \right\}^2 \\
+    & \leq \frac{1}{2n} \sum_{k=1}^n \max \left\{\sqrt{\sum_{i=1}^{2^n} \sum_{j=1}^T\max \left\{v^{(i)}(j),0 \right\}^2} - \rho,0 \right\}^2 \\
+    & \leq \frac{1}{2n} \sum_{k=1}^n \max \left\{\|v\| - \rho,0 \right\}^2 \leq \frac{1}{2}(\rad - \rho)^2.
+\end{align*}
+Also for $I_1$ chosen by the oracle: 
+\begin{align*}
+    \frac{1}{2n} \sum_{k=1}^n f(0+e_{I},z_k) & = \frac{1}{2n} \sum_{k=1}^n \max \left\{\sqrt{\sum_{i=1}^{2^n} \sum_{j=1}^T\max \left\{z_k(i) (0 + v^{(i)}(j)),0 \right\}^2} - \rho,0 \right\}^2 \\
+    & = \frac{1}{2n} \sum_{k=1}^n \max \left\{\sqrt{\max \left\{0 + v(I),0 \right\}^2} - \rho,0 \right\}^2 = \frac{1}{2}(\rad - \rho)^2,
+\end{align*}
+this concludes the base case. For the induction step we can notice that in step $t$ it holds that $w(i) \leq 0$ for every $i$ and $w(I_t) = 0$ thus the same steps as the base case complete the proof. To see no projections take place we note that by definition:
+$$\textstyle
+O_S^t(w_t) = \frac{1}{2n} \sum_{k=1}^n 2\left(\sqrt{z_k(I_t)(w_t(I_t) + \rad)^2}  - \rho \right)\cdot \frac{z \odot ([w + \rad e_{I_t}]_+)}{\sqrt{z_k(I_t)(w_t(I_t) + \rad)^2}}  = (\rad - \rho) \cdot \frac{\rad e_{I_t}}{\rad} = (\rad - \rho)e_{I_t}.$$
+This implies that at time $t$: 
+$$w_t(i) = \begin{cases}
+    -\eta(\rad - \rho) & i \in \{I_j\}_{j=1}^{t-1} \\
+    0 & \text{o.w.}
+\end{cases}.$$
+Since $\eta (\rad - \rho) \leq \frac{1}{\sqrt{T}}$, we stay inside the unit ball for the entire run of the algorithm. This dynamics also imply that for every $\tau\in[T]$ suffix average $\widehat{w}_{\tau} = \frac{1}{T-\tau+1}\sum_{t = \tau}^T w_t$ and $s \leq \frac{T}{2}$ the following holds: 
+\begin{align*}
+    \widehat{w}_{\tau}(I_s) & = \frac{1}{T-\tau+1}\sum_{t = \tau}^T w_t(I_s) \leq \frac{1}{T-\tau+1}\sum_{t = \max\{\tau, T/2\}}^T w_t(I_s) \\
+    & \leq \frac{T - \max\{\tau, T/2\} +1}{T - \tau + 1} \left(-\eta (\rad - \rho) \right) \leq - \frac{\eta (\rad - \rho)}{2}.
+\end{align*}
+With probability $\frac{1}{2}$ a new sample $z'$ will hold $z(I) = -1$ which gives:
+\begin{align*}
+    F(\widehat{w}_{\tau}) - F(0) & \geq \frac{1}{4} \max \left\{\sqrt{\sum_{t=1}^T \widehat{w}_{\tau}^{(I)}(t)^2 } - \rho,0 \right\}^2 \geq \frac{1}{4} \max\left\{ \frac{\eta(\rad - \rho)}{2} \sqrt{\frac{T}{2}}  - \rho,0 \right\}^2 \\
+    & \geq  \frac{1}{4} \max\left\{ \frac{\eta(\rad - \rho)}{2} \sqrt{\frac{T}{2}}  - \frac{\eta (\rad - \rho) \sqrt{T}}{3},0 \right\}^2  \tag{$\rho \leq \rad - \frac{3\rad}{3+\eta \sqrt{T}}$} \\
+    & \geq \frac{1}{4\cdot 100^2}\eta(\rad - \rho) \sqrt{T} = \Omega(\eta^2 (\rad - \rho)^2 T).
+\end{align*}
+    
+\end{proof}
+
+
+\subsection{Proof of Theorem~\ref{thm:max_gen_upper}}\label{sec:proof_max_gen_upper}
+Our population loss upper bound for SA-GD (\cref{thm:max_gen_upper}) are based on algorithmic stability 
+(e.g., \cite{bousquet2002stability,hardt2016train}). 
+In this section, we revisit the main arguments required for these proofs and establish an algorithmic stability upper bound for first-order methods that minimize the SAER. 
+In particular, the stability bounds in this section hold for any algorithm that produces a sequence $\{w_t\}_{t=1}^T$ satisfying $w_{t+1} = w_t - \eta \nabla F_S(w_t + v_t)$, where $\{v_t\}_{t=1}^T$ is a sequence of vectors such that for every $t$, $\|v_t\| \leq \rad$ and $\eta \leq 1/(2\beta)$.
+
+The notion of stability that we consider is on-average-leave-one-out (loo) model stability (e.g., \cite{lei2020fine, schliserman22a}). 
+For this definition, we assume without loss of generality that there exists an example $z_0 \in \mathcal{Z}$ for which $f(w,z_0)=0$ for all $w$. (Otherwise, we can artificially augment the sample space with such an instance.)
+Now, given an i.i.d.~sample $S = (z_1,\ldots,z_n)$, with the corresponding
+$F_S$, we define the leave-one-out samples
+$
+    S^{(i)} = (z_1,\ldots,z_{i-1},z_0,z_{i+1},\ldots,z_n)
+$
+for all $i \in [n]$, 
+with the corresponding empirical risks:
+\begin{align*}
+    \forall ~ i \in [n],
+    \qquad
+    F_{S^{(i)}}
+    =
+    \frac1n \sum_{z \in S_i} f(w,z)
+    =
+    \frac1n \sum_{j \neq i} f(w,z_j)
+    .
+\end{align*}
+We can now define the on-average-loo model stability for learning algorithms.\begin{definition}[$\ell_2$-loo-on-average model stability] 
+Let $A : \mathcal{Z}^n \to \R^d$ be a learning algorithm. We say that $A$ is $\ell_2$-on-average model $\epsilon$-stable if for any
+samples $S$, $S'$,
+\begin{equation} \label{epsilon_l2_stab}  
+    \frac1n \sum_{i=1}^n { \|A(S)-A(S^{(i)})\|^2 }
+    \leq 
+    \epsilon
+    .
+\end{equation}
+We will denote  by $\epsilon_{\text{stab}}$ the infimum over all $\epsilon$ for which \cref{epsilon_l2_stab} holds.
+\end{definition}
+Previous work has shown that an $\epsilon$-leave-one-out stable algorithm achieves good generalization. 
+This is formalized in the following lemma from \cite{schliserman22a}.
+
+\begin{lemma}[Lemma 7 from \cite{schliserman22a}]
+\label{lem:stabtogen}
+Let $A$ be an $\ell_2$-on-average-loo model $\epsilon$-stable learning algorithm. Then, if for every $z$, $f(w,z)$ is convex and $\beta$-smooth with respect to $w$, 
+\begin{align*}
+    \mathbb E { F(A(S)) }
+    \leq
+    4\mathbb E \left[ F_S (A(S)) \right]
+    + 3\beta \epsilon
+    .
+\end{align*}
+\end{lemma}
+We can now state the stability upper bound that we establish. 
+It is formalized in the following lemma,
+
+\begin{lemma}
+    \label{lem:stab_upper}
+Assume that for every $z$, $f(w,z)$ is $\beta$-smooth, convex, non-negative and $\rho$-flat. Let $A$ be an algorithm that given a data set $S$, produce a sequence $\{w_t\}_{t=1}^T$ such that $$
+w_{t+1} = w_t - \eta \nabla F_S(w_t+v_t),$$
+ where $\{v_t\}_{t=1}^T$ are vectors such that for every $t$$, \|v_t\|\leq \rad$ and $\eta\leq 1/2\beta$. Assume that $A$ returns the averaged iterate $\widehat{w} \coloneqq \frac{1}{T}\sum_{t=1}^T w_t$. Then, $A$ is $\ell_2$-on-average model $\epsilon$-stable with 
+$$\epsilon_{\text{stab}}\leq O\left(\eta \beta \rad  ^2  T+ \frac{\beta\eta T}{n^2} + \frac{\beta^2\eta^2 T^2 \max(\rad-\rho,0)^2}{n^2}\right)$$
+\end{lemma}
+The proof of \cref{lem:stab_upper} appears in \cref{sec:proof_omitted_max_gen_upper}. We will now prove \cref{thm:max_gen_upper}.
+
+\begin{proof} [of \cref{thm:max_gen_upper}]
+By \cref{thm:max_opt}, we know that
+\begin{align*}
+    F_S\left(\frac{1}{T}\sum_{t=1}^T w_t\right)\leq \fsmax\left(\frac{1}{T}\sum_{t=1}^T w_t\right)
+    &\leq
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2
+    .
+\end{align*}
+By \cref{lem:stab_upper}, we know that,  the algorithm is $\ell_2$-on-average model $\rad$-stable with 
+$$\epsilon\leq 24\eta \beta \rad  ^2  T+ \frac{96\beta\eta T}{n^2} + \frac{768\beta^2\eta^2 T^2 \max(\rad-\rho,0)^2}{n^2}.$$
+By combining both equations with \cref{lem:stabtogen} we get the theorem.
+\end{proof}
+
+\subsubsection{Omitted Proofs}\label{sec:proof_omitted_max_gen_upper}
+
+\begin{proof} [of \cref{lem:stab_upper}]
+Denote by $\{w_t^{(i)}\}_{t\in [T]}$ the iterates of $S^{(i)}$ and by  $\{v_t^{(i)}\}_{t\in [T]}$ the corresponding sequence of perturbations vectors.
+It holds that,
+\begin{align*}
+    &\|w_{t+1} - w_{t+1}^{(i)}\|^2=\| w_t - w_t^{(i)} - \eta \big(\nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+ v_t^{(i)})\big)\|^2 \\
+    & \leq \|w_t-w_{t}^{(i)}\|^2 + \underbrace{\eta^2 \| \nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+ v_t^{(i)}) \|^2}_{(I)}  \\
+    & \hspace{2em} - \underbrace{2\eta \langle \nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), w_t - w_t^{(i)} \rangle}_{(II)} 
+\end{align*}
+Treating the two terms (I),(II) separately, for (I) it holds by \cref{lem:2L_descent} that,
+\begin{align*}
+    &\eta^2 \| \nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+ v_t^{(i)}) \|^2 \\
+    & \leq 2 \eta^2 \|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)} + v_t^{(i)})\|^2 + \frac{2\eta^2}{n^2}\|\nabla f(w_t + v_t,z_i)\|^2 \\
+    & \leq 2\eta^2 \|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)} + v_t^{(i)})\|^2 + \frac{4\eta^2}{n^2}\|\nabla f(w_t + v_t,z_i\|^2
+    \\ & \leq 2\eta^2 \|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)} + v_t^{(i)})\|^2 + \frac{8\beta\eta^2}{n^2}f(w_t + v_t,z_i).
+\end{align*}
+For (II), it holds by two uses of Young's inequality that,
+\begin{align*}
+    &-2\eta \langle \nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), w_t - w_t^{(i)} \rangle \\
+    =&  -2\eta \langle \nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), w_t - w_t^{(i)} \rangle - \frac{2\eta}{n} \langle \nabla f(w_t + v_t,z_i), w_t -w_t^{(i)} \rangle
+    \\
+    = & -2\eta \langle \nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), w_t +v_t - w_t^{(i)} - v_t^{(i)} \rangle\\
+    &  \quad- \frac{2\eta}{n} \langle \nabla f(w_t + v_t,z_i), w_t -w_t^{(i)} \rangle + 2\eta \langle \nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), v_t - v_t^{(i)} \rangle \\
+    \leq & - \frac{2\eta}{\beta} \|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)})\|^2  \\&\quad +\frac{\eta }{\alpha n} \|w_t - w_t^{(i)}\|^2 + \frac{\eta \alpha }{n} \|\nabla f(w_t + v_t,z_i)\|^2\\
+    &  \quad + \frac{\eta}{\gamma}\|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)})\| + \eta\gamma \|v_t - v_t^{(i)}\|^2 
+    \end{align*}
+    By setting $\alpha=\eta T/n$ and using co-coercivity of-gradients of smooth functions, we get,
+    \begin{align*}
+    &-2\eta \langle \nabla F_{S}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)}), w_t - w_t^{(i)} \rangle 
+     \\
+     & \leq(\frac{\eta}{\gamma} - \frac{2\eta}{\beta})\|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)})\|^2 +\frac{\eta }{\alpha n} \|w_t - w_t^{(i)}\|^2 \\
+     & \hspace{20em} +\frac{2\beta \alpha \eta }{n} f(w_t+v_t,z_i)+4\eta \gamma \rad^2
+    \\
+     & \leq  (\frac{\eta}{\gamma} - \frac{2\eta}{\beta})\|\nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)})\|^2 +\frac{1 }{T} \|w_t - w_t^{(i)}\|^2 \\
+    & \hspace{20em} +\frac{2\beta \eta^2 T}{n^2} f(w_t+v_t,z_i)+4\eta \gamma \rad^2.
+\end{align*}
+
+
+Averaging over $i\in [n]$, plugging both in, and setting $\gamma = \beta$,$\eta \leq \frac{1}{2\beta}$
+\begin{align*}
+    &\frac{1}{n}\sum_{i=1}^n\|w_{t+1} - w_{t+1}^{(i)}\|^2 \\&\leq \left(1+\frac{1}{T}\right)\frac{1}{n}\sum_{i=1}^n\|w_{t} - w_{t}^{(i)}\|^2 + \frac{8\beta\eta^2 (T+1)}{n^2} F_S(w_t+v_t)  \\&\qquad+ 4\eta \gamma \rad  ^2+ (2\eta^2 -\frac{2\eta}{\beta} +\frac{\eta}{\gamma}) \| \nabla F_{S^{(i)}}(w_t + v_t) - \nabla F_{S^{(i)}}(w_t^{(i)}+v_t^{(i)})\|^2  
+    \\&\leq \left(1+\frac{1}{T}\right)\frac{1}{n}\sum_{i=1}^n\|w_{t} - w_{t}^{(i)}\|^2 + \frac{8\beta\eta^2 (T+1)}{n^2} F_S(w_t+v_t) + 4\eta \beta \rad  ^2
+    \\&\leq \frac{e^\frac{1}{T}}{n}\sum_{i=1}^n\|w_{t} - w_{t}^{(i)}\|^2 + \frac{8\beta\eta^2 (T+1)}{n^2} F_S(w_t+v_t) + 4\eta \beta \rad  ^2.
+\end{align*}
+Now, unrolling the recursion, we get,
+\begin{align*}
+    \frac{1}{n}\sum_{i=1}^n\|w_{t+1} - w_{t+1}^{(i)}\|^2&\leq \sum_{t=1}^{T} e^{\frac{T-t}{T}} \left( \frac{8\beta\eta^2 (T+1)}{n^2} F_S(w_t+v_t) + 4\eta \beta \rad  ^2\right)
+    \\&\leq   \frac{24\beta\eta^2 (T+1)}{n^2} \sum_{t=1}^{T}F_S(w_t+v_t)+ 12\eta \beta \rad  ^2 T.
+    \end{align*}
+Using \cref{lem:gen_regret}, we get for every $t$ that,
+\begin{align*}
+     \frac{1}{n}\sum_{i=1}^n\|w_{t+1} - w_{t+1}^{(i)}\|^2&\leq \frac{96\beta\eta^2 T}{n^2} \left(\frac{1}{\eta} + 4 \beta T \max(\rad-\rho,0)^2\right)  +12\eta \beta \rad  ^2 T
+     \\&= 12\eta \beta \rad  ^2  T+ \frac{96\beta\eta T}{n^2} + \frac{384\beta^2\eta^2 T^2 \max(\rad-\rho,0)^2}{n^2} .
+\end{align*}
+By Jensen's inequality and the convexity of squared $\ell_2$ norm, we get that,
+\begin{align*}
+     \frac{1}{n}\sum_{i=1}^n\|\frac{1}{T}\sum_{i=1}^T w_{t} - \frac{1}{T}\sum_{i=1}^T w_{t}^{(i)}\|^2&\leq  24\eta \beta \rad  ^2  T+ \frac{96\beta\eta T}{n^2} + \frac{768\beta^2\eta^2 T^2 \max(\rad-\rho,0)^2}{n^2} .
+\end{align*}
+\end{proof}
+
+
+\section{Proofs for Section~\ref{sec:sam}}\label{sec:proof_sam}
+\subsection{Proof of Theorem~\ref{thm:asc_opt_upper}}\label{proof_asc_opt_upper}
+ \begin{proof}[of \cref{thm:asc_opt_upper}]
+    By the convexity of $F_S$ we know that, for every $t$,
+    \begin{align*}
+        F_S(w_t+v_t)&\geq F_S(w_t) + \langle\nabla F_S(w_t),v_t\rangle
+        \\&= F_S(w_t) + \langle\nabla F_S(w_t),\rad\frac{\nabla F_S (w_t)}{\|\nabla F_S(w_t)\|}\rangle
+         \\&= F_S(w_t) + \rad \|\nabla F_S(w_t)\|
+        \\&\geq F_S(w_t).
+    \end{align*}
+    Then, by \cref{lem:gen_regret}, using Jensen inequality, we get,
+\begin{align*}
+F_S\left(\frac{1}{T}\sum_{t=1}^T w_t\right)
+    &\leq \frac{1}{T}\sum_{i=1}^T F_S\left( w_t\right)-F_S(w^\star)
+    \\&\leq 
+    \frac{1}{T}\sum_{i=1}^T F_S\left( w_t+v_t\right)-F_S(w^\star)
+    \\&\leq 
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2.
+\end{align*}
+\end{proof}
+
+
+
+
+\subsection{Proof of Theorem~\ref{thm:ascent_opt_non_flate}}\label{sec:ascent_opt_non_flate}
+
+\begin{proof} [of \cref{thm:ascent_opt_non_flate}]
+Let $f(w)=\frac{1}{2}\max(0,x)^2$.
+Its (one-dimensional) derivatives are, for $w\neq 0$,
+\[
+f'(w)=w,\qquad f''(w)=1,
+\]
+and for $w<0$, \[
+f'(w)=f''(w)=0,
+\]
+$f$ is a non-negative function.
+The convexity is implied by the positivity of $f''$. 
+The Lipschitzness is implied by the fact that $|f'(w)|\leq 1$ for every $w\in W$. The smoothness is followed by the fact that $g(w)=\max (0,w)$ is a Lipschitz function as a max function over two Lipschitz functions.
+In addition, $f$ is $\rho$-flat 
+since $w^\star=-\frac{1}{2}$, holds $f(w^\star +v) =0$ for every $\|v\|\leq \frac{1}{2}$.
+Now, let $w_1=0$.
+Since $f'(0)=0$, $w_2=w_1=0$ and by induction it follows that SAM satisfies $w_t=0$ for every $t$.
+As a result, for any $\tau$, $\widehat{w}_{\tau}=0$,
+and, for every $0\leq \rad\leq \frac{1}{2}$, it holds that,
+\begin{align*}
+    \fsmax(\widehat{w}_{\tau})-\fsmax(w^\star)=\max_{v\leq \rad} \frac{1}{2}\max(0,v)^2-0=\frac{1}{2}\rad^2.
+\end{align*}
+\end{proof}
+
+
+\subsection{Proof of Theorem~\ref{thm: gen asc sam}}\label{sec:proof_gen_asc_sam}
+
+
+
+\begin{proof}[of \cref{thm: gen asc sam}]
+Let $d = T \cdot 2^n + 1$, $\mathcal{Z}= \{0,1\}^{2^n}$, $\mathcal{D}$ to be the uniform distribution over $\mathcal{Z}$. Denote for every $i \in [T]; \; w^{(i)} = w[T\cdot (i-1) + 1 : T \cdot i]$.  Consider the following function:
+\begin{align*}
+    f(w,z) & = \frac{1}{2}\sum_{i=1}^{2^n} \sum_{j=2}^T z(i) w^{(i)}(j)^2 \\
+    & + \frac{1}{2}\sum_{i=1}^{2^n} \sum_{j=2}^T \max\left\{w^{(i)}(j) - \delta_j \left( w^{(i)}(j-1) + \lambda \cdot \mathbbm{1}[j=2]\right),0\right\}^2  \\
+    & + \frac{\gamma}{2} \max\{v_z^Tw + \delta_1,0\}^2, 
+\end{align*}
+where 
+$$v_z^{(i)}(j) = \begin{cases}
+    0 & j \neq 1 \\
+    -\frac{1}{2(d-1)} & i \leq 2^n, \; j = 1 \text{ and } z(i) = 0 \\
+    1 & i \leq 2^n, \; j = 1 \text{ and } z(i) = 1\\
+    1 & i = 2^n + 1 \text{ and } j = 1
+\end{cases},$$
+and, 
+$$\delta_1 = \frac{\eta \gamma \rad}{2\sqrt{d}-\eta\gamma}, \qquad \lambda = \frac{\rad}{4d(d-1)},\qquad \gamma = \frac{\lambda}{\max\{1, \eta\} (\rad+\delta_1)}.$$
+The positive parameters $\{0 <\delta_j \leq 1\}_{j=2}^T$ will be chosen later. We will prove $f$ has the desired properties in the following lemma whose proof is deferred to \cref{sec:proof_omitted_gen_asc_sam}.
+\begin{lemma}\label{lemma: f properties ascent sam}
+    $f$ defined as defined above is convex, $6$-smooth, $7$-Lipschitz and realizable, meaning $\rho$-flat with $\rho=0$.  
+\end{lemma}
+
+Since the distribution $\mathcal{D}$ is uniform over $\{0,1\}^{2^n}$, for a random training set $S = \{z_1, \dots, z_n\}$ with probability at least $\frac{1}{e} > \frac{1}{3}$, there exists \textit{exactly one} index $I$ such that for every $z \in S$, $z(I) = 0$. For the rest of the proof, assume this event holds. We will show the dynamics of the algorithm under this assumption in the following lemma which proof is deferred to \cref{sec:proof_omitted_gen_asc_sam}: 
+\begin{lemma}\label{lemma: asc sam proof first update}
+    Assuming there exists a coordinate $I$ such that $\forall z\in S; \; z(I) = 0$, and $\eta \rad \leq \frac{1}{\sqrt{T}}$, $w_1 = 0$, then there exists $\delta_2 > 0$ such that after running one SAM update on $F_S$,
+    \begin{enumerate}
+        \item\label{enum:asc-sam-first-update_1} $\forall z \in S;\; v_z^Tw_2 + \delta_1 \leq 0$ 
+        \item \label{enum:asc-sam-first-update_2}$\forall i \neq I; \; -\lambda <  w_2^{(i)}(1) < 0$
+        \item\label{enum:asc-sam-first-update_3} $\forall i \neq I, \; j\geq 2; \; w^{(i)}_2(j) = 0$
+        \item\label{enum:asc-sam-first-update_4} $\forall j \geq 3; \; w_2^{(I)}(j) = 0$
+        \item\label{enum:asc-sam-first-update_5} $0 \leq w_2^{(I)}(1) \leq \frac{1}{d}$
+        \item\label{enum:asc-sam-first-update_6} $-\frac{1}{d} \leq w_2^{(I)}(2) < 0 $.
+    \end{enumerate}
+\end{lemma}
+From this lemma we can conclude that if $w_t^{(I)}(2)$ remains negative throughout the remaining run of the algorithm, none of the coordinates in $w^{(i)}$ where $i \neq I$ will change, and neither will $w^{(i)}(1)$ for every $i$. This means that while  $w_t^{(I)}(2)$ remains negative it suffices to prove the dynamics for the following function: 
+\begin{align*}
+    g(u) & = \frac{1}{2} \sum_{j=3}^T \max\left\{u(j) - \delta_j u(j-1),0\right\}^2 + \max\{u(2), 0\}^2,
+\end{align*}
+when we start from $u_2 = -\sigma e_2$ for $\sigma = |w_2^{(I)}(2)| > 0$. The dynamics we will prove for $u[2:T]$ will hold for $w^{(I)}[2:T]$ while the rest of $w$ stays the same as in $w_2$. We will now continue to look at the dynamics of $\{u_t\}_{t=2}^T$. We will have the following lemma whose proof is deferred to \cref{sec:proof_omitted_gen_asc_sam}: 
+\begin{lemma}\label{lemma: asc sam proof g}
+    There exists a set of positive parameters $\{0 < \delta_t \leq 1\}_{t=3}^T$ such that starting from $u_2 = -\sigma e_2$ will give us the following for $t \geq 4$:
+    \begin{enumerate}
+    \item $- \sigma \leq u_t(2) \leq 0$
+    \item  $u_t(i+1) - \delta_i u_t(i)  \begin{cases}
+        \leq 0 & 2 \leq i < t \\
+        > 0 & i = t \\
+        = 0 & t < i \leq T-1
+    \end{cases}$
+    \item $-2\eta\rad  \leq u_{t}(t) \leq - \eta \rad$
+    \item $-2\eta\rad  \leq  u_{t}(t-1) \leq -\frac{1}{2} \eta \rad$.
+\end{enumerate}
+\end{lemma}
+
+In the proof of the dynamic of $u$ we did not consider projections, that is because with this dynamic and the assumption that $\eta\rad\leq \frac{1}{2\sqrt{T}}$ means we stay inside the unit ball for the entire algorithm and no projections take place. To see this notice using \cref{lemma: asc sam proof first update,lemma: asc sam proof g} that for every $t\in [T]$:
+\begin{align*}
+    \|w_t\|^2 \leq \|w_T\|^2 \leq 2(T-1) \cdot 4 \eta^2 \rad^2 + d \cdot \frac{1}{d^2} \leq 4\frac{(T-1)}{4T} + \frac{1}{T \cdot 2^n} \leq 1.
+\end{align*}
+Concluding we know that for $t = 3, \dots, T$:
+$$\forall j \in \{3,\dots, t\} ;\; w_t^{(I)}(j) \leq -\frac{1}{2} \eta \rad.$$
+This implies that for a suffix average $\tau\in [T];\; \widehat{w}_{\tau} = \frac{1}{T-\tau+1} \sum_{t=\tau}^T w_t$ we have that for $s \geq \frac{T}{2}$:
+\begin{align*}
+    \widehat{w}_{\tau}^{(I)}(s) & = \frac{1}{T-\tau+1}\sum_{t = \tau}^T w_t^{(I)}(s) \leq \frac{1}{T-\tau+1}\sum_{t = \max\{\tau, T/2\}}^T w_t^{(I)}(s) \\
+    & \leq \frac{T - \max\{\tau, T/2\} +1}{T - \tau + 1} \left(-\frac{1}{2}\eta \rad \right) \leq - \frac{\eta \rad}{4}.
+\end{align*}
+With probability $\frac{1}{2}$ a new sample $z'$ will have $z'(I) = 1$. This means that for every $\tau \in [T]$: 
+$$F(\widehat{w}_{\tau}) - F(w^{\star}) \geq \|\widehat{w}_{\tau}\|^2 \geq \frac{1}{4} \eta^2 \rad^2 \cdot \frac{T}{2} = \Omega(\eta^2\rad^2T).$$
+Where we use the fact that $F$ is realizable. This concludes the proof.
+\end{proof}
+
+\subsubsection{Omitted Proofs}\label{sec:proof_omitted_gen_asc_sam}
+
+\begin{proof}[of \cref{lemma: f properties ascent sam}]\label{proof: f properties ascent sam}
+    We will use the following notation:
+\begin{align*}
+f(w,z)
+&= \underbrace{\frac12\sum_{i=1}^{2^n}\sum_{j=2}^{T} z(i)\,w^{(i)}(j)^2}_{=:f_1(w)} \\
+&\quad + \underbrace{\frac12\sum_{i=1}^{2^n}\sum_{j=2}^{T} 
+\left[\,w^{(i)}(j)-\delta_j\big(w^{(i)}(j-1)+\lambda\,\mathbbm{1}[j=2]\big)\,\right]_+^{\!2}}_{=:f_2(w)} \\
+&\quad + \underbrace{\frac{\gamma}{2}\,[\,v_z^\top w + \delta_1\,]_+^{2}}_{=:f_3(w)} ,
+\end{align*}
+\paragraph{Convexity.}
+Each component is convex:
+\begin{itemize}
+  \item $f_1$: a nonnegative sum of convex quadratics.
+  \item $f_2$: each term is $\tfrac12(\text{affine}(w))_+^2$, convex because $x \mapsto \tfrac12(x_+)^2$ is convex and nondecreasing.
+  \item $f_3$: same reasoning as $f_2$.
+\end{itemize}
+Therefore $f$ is convex.
+
+\paragraph{Lipschitz continuity.}
+We will bound the norm of the gradients inside the unite ball.
+\begin{itemize}
+  \item $f_1$: $\nabla f_1(w)=z(i)\,w^{(i)}(j)$ on each $(i,j)$ with $j\ge2$, hence $\|\nabla f_1(w)\| \le\|z\|_{\infty}\|w\|\leq 1$.
+  \item $f_2$: define $r_{i,j}(w)=\left[\,w^{(i)}(j)-\delta_j(w^{(i)}(j-1)+\lambda\mathbbm{1}[j=2])\,\right]$.
+  Each term $\tfrac12 [r_{i,j}(w)]_+^2$ contributes gradient supported on $w^{(i)}(j),w^{(i)}(j-1)$ with squared norm $(1+\delta_j^2)[r_{i,j}(w)]_+^2\le2[r_{i,j}(w)]_+^2 \le 2r_{i,j}(w)^2$. Using the fact that $(a-b)^2 \leq 2a^2 + 2b^2$ for any $a,b$, we get:
+  \begin{align*}
+      \| \nabla f_2(w)\|^2 & =\left\|\sum_{i=1}^{2^n} \sum_{j=2}^T \nabla \left(\frac{1}{2}[r_{i,j}(w)]_+^2\right) \right\|^2 \leq \sum_{i=1}^{2^n} \sum_{j=2}^T \left\|\nabla \left(\frac{1}{2} [r_{i,j}(w)]_+^2 \right)\right\|^2 \leq \sum_{i=1}^{2^n} \sum_{j=2}^T 2r_{i,j}(w)^2 \\
+      & =2\sum_{i=1}^{2^n} \sum_{j=2}^T \left( w^{(i)}(j) + \delta_j (w^{(i)}(j-1) + \lambda \mathbbm{1}[j = 2])\right)^2 \\
+      & \leq 4\sum_{i=1}^{2^n} \sum_{j=2}^T \left(w^{(i)}(j)^2 + \delta_j^2 (w^{(i)}(j-1)^2 + \lambda \mathbbm{1}[j = 2])^2 \right)\\
+      & \leq 4\sum_{i=1}^{2^n} \sum_{j=2}^T \left(w^{(i)}(j)^2 + 2\delta_j^2w^{(i)}(j-1)^2 + 2\delta_j^2\lambda \mathbbm{1}[j = 2])^2 \right) \\
+      & \leq 12\|w\|^2 + 8\delta_2^2 \lambda \cdot 2^n \\
+      &\leq 12 + 8\cdot 1 \cdot \frac{r}{4d(d-1)} \cdot 2^n \leq 13.
+  \end{align*}
+  Hence $f_2$ is $4$-Lipschitz
+
+  \item $f_3$: $\nabla f_3(w)=\gamma\,(v_z^\top w+\delta_1)_+\,v_z$, hence $\|\nabla f_3(w)\|_2\le \gamma(\|v_z\|+|\delta_1|)\|v_z\| \leq \frac{1}{4d(d-1)} \cdot (\frac{d}{T}+1) \cdot \frac{d}{T}\leq 1$.
+\end{itemize}
+Adding the three bounds gives that $f$ is $6$-Lipschitz. 
+\paragraph{Smoothness.}
+\begin{itemize}
+  \item $f_1$: this function's Hessian is diagonal with entries $z(i)$ on coordinates $(i,j)$ with $j\ge2$. Since $z(i) \in \{0,1\}$, $f_1$ is $1$-smooth.
+  \item $f_2$: For each $i$, stack the variables as $w^{(i)}\in\mathbb{R}^T$ and define the linear map
+  \[
+    (Bw^{(i)})_{j-1} \;=\; w^{(i)}(j)-\delta_j\,w^{(i)}(j-1),\qquad j=2,\dots,T,
+  \]
+  so $B\in\mathbb{R}^{(T-1)\times T}$ has $1$ on the superdiagonal and $-\delta_j$ on the subdiagonal positions that touch it. Let $b\in\mathbb{R}^{T-1}$ encode the constant shift $b_{1}=-\delta_2\,\lambda$ and $b_{k}=0$ for $k\ge2$. Writing $x$ for the full vector that stacks all $w^{(i)}$, we can express
+  \[
+    f_2(x)=\frac12\sum_{i=1}^{2^n}\big\|\,[Bw^{(i)}+b]_+\,\big\|_2^2
+    =\frac12\big\|\,[Ax+c]_+\,\big\|_2^2,
+  \]
+  where $A$ is block-diagonal with $2^n$ copies of $B$ and $c$ stacks the copies of $b$.
+  By the chain rule,
+  \[
+    \nabla f_2(x)=A^\top\,[Ax+c]_+.
+  \]
+  Hence, for any $x,y$,
+  \begin{align*}
+      \|\nabla f_2(x)-\nabla f_2(y)\| & =\big\|A^\top\big([Ax+c]_+-[Ay+c]_+\big)\big\|
+    \\
+    & \le\|A\|\,\|[Ax+c]_+-[Ay+c]_+\|
+    \\
+    & \le\|A\|\,\|A(x-y)\| \tag{$[\cdot]_+$ is 1-Lipschitz}
+    \le\|A\|^2\,\|x-y\|.
+  \end{align*}
+  Therefore $f_2$ is $\|A\|^2=\|B\|^2$-smooth. Using $\delta_j\le1$ and $(a-b)^2\le2a^2+2b^2$, for any $\|x\|= 1$:
+  \[
+    \|Bx\|_2^2=\sum_{j=2}^T\big(x_j-\delta_jx_{j-1}\big)^2
+    \;\le\;2\sum_{j=2}^T x_j^2+2\sum_{j=2}^T\delta_j^2 x_{j-1}^2
+    \;\le\;4\sum_{j=1}^T x_j^2 \leq 4,
+  \]
+  so $\|B\|^2\le4$ and consequently $f_2$ is $4$-smooth.
+
+  \item $f_3$: $\nabla f_3(w)=\gamma\,[\,v_z^\top w+\delta_1\,]_+\,v_z$.  
+For any $x,y$, 
+\begin{align*}
+    \|\nabla f_3(x)-\nabla f_3(y)\|
+& = \gamma\,\|[\,v_z^\top x+\delta_1\,]_+-[\,v_z^\top y+\delta_1\,]_+\|\,\|v_z\|
+\le \gamma\,\|v_z^\top(x-y)\|\,\|v_z\|
+\\ & \le \gamma\|v_z\|^2\|x-y\| \leq \frac{d}{4d(d-1)} \|x-y\| \leq \|x-y\| ,
+\end{align*}
+
+so $f_3$ is $1$-smooth.
+
+\end{itemize}
+Summing gives $f$ is $6$ smooth.
+
+\paragraph{Realizability.}
+We can see that for 
+$$w^{\star}(i) = \begin{cases}
+    0 & i < d \\
+    - \frac{\lambda}{2} & i = d
+\end{cases}$$
+$f(w^{\star}, z) = 0$ for every $z \in \{0,1\}^d$.
+\end{proof}
+
+
+\begin{proof}[of \cref{lemma: asc sam proof first update}]\label{proof: asc sam proof first update} Denote $v_S = \frac{1}{n} \sum_{k=1}^n v_{z_k}$. We will compute the gradient steps explicitly, 
+$$\nabla F(w_1) = \frac{1}{n} \sum_{k=1}^n \delta_1 \cdot \gamma v_{z_k} = \delta_1 \gamma v_S.$$
+Hence,
+$$w_{1 + 1/2} = 0 + \frac{\rad \delta_1\gamma  v_S}{\delta_1\gamma \|v_S\|} = \frac{\rad v_S}{\|v_S\|}.$$
+Since $n\geq 2$ it holds that $\frac{1}{2(d-1)} \leq \frac{1}{2n}$. This implies $v_z(i) = 1 \Longrightarrow w_{1+1/2}(i) > 0$.  Hence, for every $z \in S$: 
+$$v_z^Tw_{1+1/2} \geq w_1^{(2^n + 1)}(1) - \frac{\rad}{2(d-1)} \cdot  \frac{d-1}{\|v_S\|} = \frac{\rad}{2\|v_S\|} > 0.$$
+We can calculate the first SAM update explicitly,
+\begin{align*}
+    \nabla F_S(w_{1+1/2}) & = \frac{1}{n}\sum_{k=1}^n \gamma \left(v_{z_k} \odot \frac{\rad v_S}{\|v_S\|} + \delta_1\right) \odot v_{z_k}   + \left[- \delta_2\left(\frac{\rad v_S(I)}{\|v_S\|} + \lambda\right)\right]_+(e^{(I)}_2 - \delta_2 e^{(I)}_1) \\
+    & = \gamma \left( \frac{\rad v_S}{\|v_S\|} \left[ \frac{1}{n} \sum_{k=1}^n v_{z_k} \odot v_{z_k} \right] + \delta_1 v_S \right) - \delta_2\left(\frac{\rad v_S(I)}{\|v_S\|} + \lambda\right)(e^{(I)}_2 - \delta_2 e^{(I)}_1),
+\end{align*}
+where the last step is from the fact that: 
+$$\frac{v_S(I)}{\|v_S\|} + \lambda = - \frac{\rad}{2(d-1) \|v_S\|} + \lambda \leq - \frac{1}{2(d-1)d} + \frac{\rad}{4d(d-1)} = -\frac{\rad}{4d(d-1)} < 0.$$
+Notice that similarly to before, this gradient step guarantees $v_z(i) = 1 \Longrightarrow w_2(i) < 0$. Since $v_S(T \cdot 2^n + 1) = 1$, for every $z\in S$: 
+\begin{align*}
+    v_{z}^Tw_2 & \leq w_2^{(2^n +1)}(1)\left(1 - \frac{1}{2(d-1)}(d-1)\right) =\frac{1}{2} w_2^{(2^n + 1)}(1) = -\frac{\eta \gamma}{2} \left(\frac{\rad + \delta_1}{\|v_S\|} \right) \\
+    & \leq -\frac{\eta \gamma (\rad+\delta_1)}{2\sqrt{d}}< 0 \tag{$\|v_S\| \leq \sqrt{d}$}
+\end{align*}
+This implies that for every $z \in S$: 
+$$v_z^Tw_2 + \delta_1 \leq -\frac{\eta\gamma (\rad + \delta_1)}{2\sqrt{d}} + \delta_1 = \frac{-\eta\gamma\rad + \delta_1(2\sqrt{d} - \eta\gamma)}{2\sqrt{d}} = 0.$$
+Where the last step is due to the choice of $\delta_1$ and concludes \cref{enum:asc-sam-first-update_1}.  Furthermore, for every $i \neq I$ we have that:
+$$w_2^{(i)}(1) + \lambda \geq - \frac{\gamma (\rad + \delta_1)}{\|v_S\|} + \lambda \geq -\gamma (\rad + \delta_1) + \lambda = 0, $$
+where the last step is from the choice of $\gamma$ concluding \cref{enum:asc-sam-first-update_2}. Finally,
+\begin{align*}
+    w_2^{(I)}(1) & = -\eta\delta_2^2 \left(\frac{\rad v_S(I)}{\|v_S\|}\right) + \eta \gamma \left(\frac{\rad}{8(d-1)^3\|v_S\|}+ \frac{\delta_1}{2(d-1)} \right) \\
+    & \leq -\eta\delta_2^2 \left(\frac{\rad v_S(I)}{\|v_S\|}\right) + \frac{1}{4d(d-1)} \left(\frac{1}{8(d-1)^3}+ \frac{1}{2(d-1)} \right),
+\end{align*}
+where the last inequality is again from the choice of $\gamma$. 
+This implies that there exists $\tau_1 > 0$ such that for every $\delta_2 \leq \tau_1$ it holds that $0 \leq w_2^{(I)}(1) \leq \frac{1}{\sqrt{d}}$. Similarly,
+\begin{align*}
+w_2^{(I)}(2) & = \eta \delta_2 \left(\frac{\rad v_S(I)}{\|v_S\|} + \lambda \right).
+\end{align*}
+Since this goes to $0$ when $\delta_2$ goes to zero, there exists $\tau_2$ such that for every $0 < \delta_2 \leq \tau_2;\;$ $-\frac{1}{\sqrt{d}} \leq w_2^{(I)}(2) < 0$. Choosing $0 < \delta_2 = \min\{\tau_1, \tau_2,1\}$ concludes \cref{enum:asc-sam-first-update_5,enum:asc-sam-first-update_6}. \cref{enum:asc-sam-first-update_3,enum:asc-sam-first-update_4} hold since these coordinates weren't changed by the update and thus stayed $0$. 
+\end{proof}
+
+
+\begin{proof}[of \cref{lemma: asc sam proof g}]\label{proof: asc sam proof g}
+We will show the claim by induction on $t$. 
+
+\paragraph{Base case.} We will start by computing $u_4$.  
+Using all we've proved we get:
+$$\nabla g(u_2) = -\delta_3\sigma (e_3 - \delta_3 e_2),$$
+which gives:
+\begin{align*}
+    u_{2+1/2} & = u_2 + \frac{\rad \nabla g(u_2)}{\|\nabla g(u_2)\|} = u_2 + \frac{\rad\delta_3}{\delta_3\sqrt{1+ \delta_3^2}}e_3 - \frac{\rad \delta_3^2}{\delta_3\sqrt{ 1+ \delta_3^2}}e_2 \\
+    & = u_2 + \frac{\rad}{\sqrt{1+ \delta_3^2}}e_3 - \frac{\rad \delta_3}{\sqrt{ 1+ \delta_3^2}}e_2.
+\end{align*}
+Thus,
+\begin{align*}
+    & \nabla g(u_{2+1/2}) = (u_{2+1/2}(3) - \delta_3 u_{2+1/2}(2)) e_{3} -\delta_3 (u_{2+1/2}(3) - \delta_3 u_{2+1/2}(2)) e_{2} \\
+    & = \left(\frac{\rad}{\sqrt{1+\delta_3^2}} + \frac{\rad  \delta_3^2}{\sqrt{1+ \delta_3^2}} -\delta_3 u_2(2)\right)e_{3} - \delta_3\left(\frac{\rad}{\sqrt{1+\delta_3^2}} + \frac{\rad  \delta_3^2}{\sqrt{1+ \delta_3^2}} -\delta_3 u_2(2)\right)e_{2} \\
+    & = \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) e_3 - \delta_3 \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) e_{2}. 
+\end{align*}
+Finally, 
+\begin{align*}
+    u_3 = u_2 - \eta \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) e_3 + \eta \delta_3 \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) e_{2}. 
+\end{align*} 
+This gives:
+$$- \sigma \leq u_3(2) = -\sigma +  \eta \delta_3 \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right).$$
+Importantly $\sigma$ does not depend on $\delta_3$ so this term goes to $-\sigma < 0$ as $\delta_3$ goes to $0$. This means that there exists $\tau_1$ such that for every $\delta_3 \leq \tau_1$ we have that $u_3(2) < 0$. Furthermore,
+$$u_{3}(3) = -\eta \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) \leq -\eta \rad  + \eta \delta_3 u_2(2) \leq -\eta \rad,$$
+where the last inequality is from the fact that $u_2(2) \leq 0$. Also since $u_3(3)$ goes to $-\eta \rad$ when $\delta_3$ goes to $0$, there exists $\tau_2$ such that for $\delta_3 \leq \tau_2$: 
+$$u_{3}(3) = -\eta \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) \geq -2\eta \rad.$$
+Further,
+\begin{align*}
+    u_3(3) - \delta_3 u_3(2) &= -\eta \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right) - \delta_3 \left( -\sigma +  \eta \delta_3 \left(\rad  \sqrt{1+ \delta_3^2} - \delta_3 u_2(2)\right)\right).
+\end{align*}
+Again, this term goes to something strictly negative as $\delta_3$ goes to $0$. This means that there exists $\tau_3$ such that for every $\delta_3 \leq \tau_3$ it holds that $u_3(3) - \delta_3 u_3(2) < 0$. Choosing $\delta_3 = \min \{\tau_1,\tau_2, \tau_3,1\}$ concludes $u_3$. We will now calculate $u_4$. From what we have shown: 
+$$\nabla g(u_3) = -\delta_4u_3(3)(e_4 - \delta_4 e_3),$$
+which gives:
+\begin{align*}
+    u_{3+1/2} & = u_3 + \frac{\rad \nabla g(u_3)}{\|\nabla g(u_3)\|} = u_3 + \frac{\rad\delta_4}{\delta_4\sqrt{1+ \delta_4^2}}e_4 - \frac{\rad \delta_4^2}{\delta_4\sqrt{ 1+ \delta_4^2}}e_3 \\
+    & = u_3 + \frac{\rad}{\sqrt{1+ \delta_4^2}}e_4 - \frac{\rad \delta_4}{\sqrt{ 1+ \delta_4^2}}e_3.
+\end{align*}
+Thus,
+\begin{align*}
+    & \nabla g(u_{3+1/2}) = (u_{3+1/2}(4) - \delta_4 u_{3+1/2}(3)) e_{4} -\delta_4 (u_{3+1/2}(4) - \delta_4 u_{3+1/2}(3)) e_{3} \\
+    & = \left(\frac{\rad}{\sqrt{1+\delta_4^2}} + \frac{\rad  \delta_4^2}{\sqrt{1+ \delta_4^2}} -\delta_4 u_3(3)\right)e_{4} - \delta_4 \left(\frac{\rad}{\sqrt{1+\delta_4^2}} + \frac{\rad  \delta_4^2}{\sqrt{1+ \delta_4^2}} -\delta_4 u_3(3)\right)e_{3} \\
+    & = \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) e_4 - \delta_4 \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) e_{3}. 
+\end{align*}
+Finally, 
+\begin{align*}
+    u_4 = u_3 - \eta \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) e_4 + \eta \delta_4 \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) e_{3}. 
+\end{align*} 
+This gives:
+$$- 2\eta\rad \leq u_4(3) = u_3(3) +  \eta \delta_4 \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right).$$
+Importantly $u_3(3)$ does not depend on $\delta_4$ so this term goes to $u_3(3) < -\eta \rad$ as $\delta_4$ goes to $0$. This means that there exists $\theta_1$ such that for every $\delta_4 \leq \theta_1$ we have that $u_4(3) < -\frac{1}{2} \eta\rad$.
+Furthermore,
+$$u_{4}(4) = -\eta \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) \leq -\eta \rad  + \eta \delta_4 u_3(3) \leq -\eta \rad,$$
+where the last inequality is from the fact that $u_3(3) \leq 0$. Also since $u_4(4)$ goes to $-\eta \rad$ when $\delta_4$ goes to $0$, there exists $\theta_2$ such that for $\delta_4 \leq \theta_2$: 
+$$u_{4}(4) = -\eta \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) \geq -2\eta \rad.$$
+Further,
+\begin{align*}
+    u_4(4) - \delta_4 u_4(3) &= -\eta \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right) - \delta_4 \left( -u_3(3) +  \eta \delta_4 \left(\rad  \sqrt{1+ \delta_4^2} - \delta_4 u_3(3)\right)\right).
+\end{align*}
+Again, this term goes to something strictly negative as $\delta_4$ goes to $0$. This means that there exists $\theta_3$ such that for every $\delta_4 \leq \theta_3$ it holds that $u_4(4) - \delta_4 u_4(3) < 0$. Choosing $\delta_4 = \min \{\theta_1,\theta_2, \theta_3,1\}$ concludes $u_4$ and the base case.
+
+\paragraph{Inductive step.} Assume this holds for $t' \leq t$. Notice that from the claim it holds that $u_{t'}$ does not depend on $\delta_t$ for $t' \leq t$. So we can choose $\delta_t$ now using $\{u_{t'}\}_{t' \leq t}$. We will calculate the SAM update for from $u_{t-1}$ to $u_t$ using the inductive assumption: 
+$$\nabla g(u_{t-1}) = -\delta_{t} u_t(t)(e_t - \delta_t e_{t-1})$$
+which gives:
+\begin{align*}
+    u_{t-1+1/2} & = u_{t-1} + \frac{\rad \nabla g(u_{t-1})}{\|\nabla g(u_{t-1})\|} = u_{t-1} + \frac{\rad\delta_t}{\delta_{t}\sqrt{1+ \delta_{t}^2}}e_t - \frac{\rad \delta_t^2}{\delta_t\sqrt{ 1+ \delta_t^2}}e_{t-1} \\
+    & = u_{t-1} + \frac{\rad}{\sqrt{1+ \delta_t^2}}e_t - \frac{\rad \delta_t}{\sqrt{ 1+ \delta_t^2}}e_{t-1}.
+\end{align*}
+Thus,
+\begin{align*}
+    \nabla g(u_{t-1+1/2}) &= (u_{t-1+1/2}(t) - \delta_t u_{t-1+1/2}(t-1)) (e_{t} - \delta_t e_{t-1})\\
+    & = \left(\frac{\rad}{\sqrt{1+\delta_t^2}} + \frac{\rad  \delta_t^2}{\sqrt{1+ \delta_t^2}} -\delta_t u_{t-1}(t-1)\right)\left(e_{t} - \delta_t e_{t-1}\right) \\
+    & = \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) e_t - \delta_t \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) e_{t-1}.
+\end{align*}
+Finally, 
+\begin{align*}
+    u_t = u_{t-1} - \eta \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) e_t + \eta \delta_t \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_3
+    {t-1}(t-1)\right) e_{t-1}. 
+\end{align*} 
+This gives:
+$$- 2\eta\rad \leq u_t(t-1) = u_{t-1}(t-1) +  \eta \delta_t \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right).$$
+Importantly $u_{t-1}(t-1)$ does not depend on $\delta_t$ so this term goes to $u_{t-1}(t-1) < -\eta \rad$ as $\delta_t$ goes to $0$. This means that there eproxists $\theta_1$ such that for every $\delta_t \leq \theta_1$ we have that $u_t(t-1) < -\frac{1}{2} \eta\rad$.
+Furthermore,
+$$u_{t}(t) = -\eta \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) \leq -\eta \rad  + \eta \delta_t u_{t-1}(t-1) \leq -\eta \rad,$$
+where the last inequality is from the fact that $u_{t-1}(t-1) \leq 0$. Also since $u_t(t)$ goes to $-\eta \rad$ when $\delta_4$ goes to $0$, there exists $\theta_2$ such that for $\delta_t \leq \theta_2$: 
+$$u_{t}(t) = -\eta \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) \geq -2\eta \rad.$$
+Further,
+\begin{align*}
+    & u_t(t) - \delta_t u_t(t-1) = \\ &-\eta \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right) - \delta_t \left( -u_{t-1}(t-1) +  \eta \delta_t \left(\rad  \sqrt{1+ \delta_t^2} - \delta_t u_{t-1}(t-1)\right)\right).
+\end{align*}
+Again, this term goes to something strictly negative as $\delta_t$ goes to $0$. This means that there exists $\theta_3$ such that for every $\delta_t \leq \theta_3$ it holds that $u_t(t) - \delta_t u_t(t-1) < 0$. Choosing $\delta_t = \min \{\theta_1,\theta_2, \theta_3\}$ concludes $u_t$ and the proof.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{thm:ascent_gen_upper}} \label{sec:proof_ascent_gen_upper}
+\begin{proof}[of \cref{thm:ascent_gen_upper}]
+The proof is identical to the proof of \cref{thm:max_gen_upper} except for using \cref{thm:asc_opt_upper} instead of \cref{thm:max_opt}.
+\end{proof}
+
+\end{document}

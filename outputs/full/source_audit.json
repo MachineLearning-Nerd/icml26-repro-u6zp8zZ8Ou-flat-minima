@@ -1,0 +1,98 @@
+{
+  "anchors_1_based": {
+    "rho_flat_definition": {
+      "file": "main_arxiv.tex",
+      "line": 417
+    },
+    "sa_gd_update": {
+      "file": "main_arxiv.tex",
+      "line": 447
+    },
+    "saerm_exact_construction": {
+      "file": "main_arxiv.tex",
+      "line": 526
+    },
+    "sagd_exact_dynamics": {
+      "file": "main_arxiv.tex",
+      "line": 687
+    },
+    "sam_full_construction": {
+      "file": "main_arxiv.tex",
+      "line": 912
+    },
+    "sam_suffix_lower_certificate": {
+      "file": "main_arxiv.tex",
+      "line": 961
+    },
+    "sam_update": {
+      "file": "main_arxiv.tex",
+      "line": 458
+    },
+    "sco_population_definition": {
+      "file": "main_arxiv.tex",
+      "line": 407
+    },
+    "theorem_1_saerm": {
+      "file": "technical_arxiv.tex",
+      "line": 6
+    },
+    "theorem_2_sagd_optimization": {
+      "file": "technical_arxiv.tex",
+      "line": 57
+    },
+    "theorem_3_sagd_lower": {
+      "file": "technical_arxiv.tex",
+      "line": 93
+    },
+    "theorem_4_sagd_stability_upper": {
+      "file": "technical_arxiv.tex",
+      "line": 126
+    },
+    "theorem_5_sam_optimization": {
+      "file": "technical_arxiv.tex",
+      "line": 157
+    },
+    "theorem_6_sam_sharp": {
+      "file": "technical_arxiv.tex",
+      "line": 178
+    },
+    "theorem_7_sam_lower": {
+      "file": "technical_arxiv.tex",
+      "line": 186
+    },
+    "theorem_8_sam_stability_upper": {
+      "file": "technical_arxiv.tex",
+      "line": 217
+    }
+  },
+  "catalog_numbering_note": "The live catalog's substance is present, but its final two theorem-number pairs are shifted relative to arXiv 2511.03548: SAM empirical convergence and sharpness are PDF Theorems 5 and 6; the SAM population lower and stability upper bounds are PDF Theorems 7 and 8.",
+  "identity": {
+    "arxiv_id": "2511.03548",
+    "arxiv_tar_sha256": "1729d0cb3ef302e51a29805d78ddbdacf7552314b0b88e9655eb7623d1490da5",
+    "main_tex_lines": 1196,
+    "main_tex_sha256": "b529ee384983eddf8299a29e4ca4ed774654e7f571aa0951116eddc8e98b6145",
+    "openreview_id": "u6zp8zZ8Ou",
+    "pdf_pages": 34,
+    "pdf_sha256": "47e2027051f0d411a657057374cb9b2095430f8dae0114c13763b04e6d50fa24",
+    "technical_tex_lines": 238,
+    "technical_tex_sha256": "2c52c89cf224faa91158baec5c94d47466f55f93e71bec787a612abd72665a9e",
+    "title": "Flat Minima and Generalization: Insights from Stochastic Convex Optimization"
+  },
+  "pdf_visual_audit": {
+    "pages_rendered": [
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "result": "PASS - theorem statements and equations are legible; no clipping or layout ambiguity"
+  },
+  "source_notes": [
+    "The Theorem 1 proof defines w^(2)=rho e_d but its final displayed population-risk line prints rho e_I; the independent certificate evaluates the defined e_d point.",
+    "The Theorem 3 proof opens with {-1,1} examples and later contains a {0,1} set typo; the executed construction uses {-1,1}, as required by its ReLU-sign dynamics.",
+    "The final Theorem 3 proof display loses a square typographically after a squared lower-bound line; all reported ratios are recomputed from the preceding exact population-risk expression.",
+    "The SAM lower-bound proof uses T*2^n block coordinates plus one scalar trigger coordinate; the implementation allocates d=T*2^n+1 exactly as the proof's v_z definition requires.",
+    "No official executable code accompanies the supplied arXiv source snapshot; all numerical functions here are clean-room NumPy implementations of displayed equations."
+  ]
+}

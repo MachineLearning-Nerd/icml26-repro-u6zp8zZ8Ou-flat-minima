@@ -1,0 +1,13 @@
+regime,T,n_for_upper_specialization,eta,beta,radius_r,lower_eta2_r2_T,upper_perturbation_eta_beta2_r2_T,upper_to_lower_ratio,same_r_exponent,same_T_exponent_before_radius_schedule,sampling_term_beta2_eta_over_T,interpretation
+fixed_r,16,16,0.041666666666666664,6.0,0.5,0.006944444444444444,6.0,864.0,2,1,0.09375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+fixed_r,32,32,0.041666666666666664,6.0,0.5,0.013888888888888888,12.0,864.0,2,1,0.046875,same r^2*T dependence; upper theorem is looser by beta^2/eta
+fixed_r,64,64,0.041666666666666664,6.0,0.5,0.027777777777777776,24.0,864.0,2,1,0.0234375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+fixed_r,128,128,0.041666666666666664,6.0,0.5,0.05555555555555555,48.0,864.0,2,1,0.01171875,same r^2*T dependence; upper theorem is looser by beta^2/eta
+fixed_r,256,256,0.041666666666666664,6.0,0.5,0.1111111111111111,96.0,864.0,2,1,0.005859375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+fixed_r,512,512,0.041666666666666664,6.0,0.5,0.2222222222222222,192.0,864.0,2,1,0.0029296875,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,16,16,0.041666666666666664,6.0,3.0,0.25,216.0,864.0,2,1,0.09375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,32,32,0.041666666666666664,6.0,2.1213203435596424,0.24999999999999994,215.99999999999994,864.0,2,1,0.046875,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,64,64,0.041666666666666664,6.0,1.5,0.25,216.0,864.0,2,1,0.0234375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,128,128,0.041666666666666664,6.0,1.0606601717798212,0.24999999999999994,215.99999999999994,864.0,2,1,0.01171875,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,256,256,0.041666666666666664,6.0,0.75,0.25,216.0,864.0,2,1,0.005859375,same r^2*T dependence; upper theorem is looser by beta^2/eta
+saturated_eta_r_sqrtT,512,512,0.041666666666666664,6.0,0.5303300858899106,0.24999999999999994,215.99999999999994,864.0,2,1,0.0029296875,same r^2*T dependence; upper theorem is looser by beta^2/eta

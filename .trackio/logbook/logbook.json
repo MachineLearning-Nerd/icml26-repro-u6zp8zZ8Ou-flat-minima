@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "title": "Repro - Flat Minima and Generalization in Stochastic Convex Optimization",
+  "emoji": "🎯",
+  "space_id": "DineshAI/u6zp8zZ8Ou",
+  "paper": {
+    "arxiv_id": "2511.03548"
+  },
+  "tags": [
+    "icml2026-repro",
+    "paper-u6zp8zZ8Ou"
+  ],
+  "updated_at": "2026-07-16T15:31:29+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Repro - Flat Minima and Generalization in Stochastic Convex Optimization",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "00-scored-evidence-summary",
+        "title": "00 - Scored evidence summary",
+        "file": "pages/00-scored-evidence-summary/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-1-flat-empirical-minima-can-generalize-worse",
+        "title": "Claim 1 - Flat empirical minima can generalize worse",
+        "file": "pages/claim-1-flat-empirical-minima-can-generalize-worse/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-2-sa-gd-converges-fast-but-retains-constant-risk",
+        "title": "Claim 2 - SA-GD converges fast but retains constant risk",
+        "file": "pages/claim-2-sa-gd-converges-fast-but-retains-constant-risk/page.md",
+        "children": []
+      },
+      {
+        "slug": "claim-3-sam-can-be-sharp-and-poorly-generalize",
+        "title": "Claim 3 - SAM can be sharp and poorly generalize",
+        "file": "pages/claim-3-sam-can-be-sharp-and-poorly-generalize/page.md",
+        "children": []
+      },
+      {
+        "slug": "live-catalog-mapping-and-source-audit",
+        "title": "Live catalog mapping and source audit",
+        "file": "pages/live-catalog-mapping-and-source-audit/page.md",
+        "children": []
+      },
+      {
+        "slug": "scope-falsification-attempts-and-limitations",
+        "title": "Scope, falsification attempts, and limitations",
+        "file": "pages/scope-falsification-attempts-and-limitations/page.md",
+        "children": []
+      },
+      {
+        "slug": "reproduction-artifact-tests-and-hashes",
+        "title": "Reproduction, artifact, tests, and hashes",
+        "file": "pages/reproduction-artifact-tests-and-hashes/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 7966,
+  "revision": "1784215889643277925"
+}

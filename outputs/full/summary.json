@@ -1,0 +1,143 @@
+{
+  "boundaries": {
+    "saerm_rho_one_outside_theorem_population_gap": 0.0,
+    "sagd_r_equals_rho_max_risk": 0.0,
+    "sagd_violated_threshold_max_risk": 0.0,
+    "sam_r_zero_sharpness_gap": 0.0
+  },
+  "claim_1_saerm": {
+    "accepted_datasets": 48,
+    "all_flat_saer_global_minima": true,
+    "all_sharp_growth_ratios": true,
+    "certificate_rows": 576,
+    "dimensions": [
+      65,
+      257,
+      1025
+    ],
+    "event_trials": 16384,
+    "max_event_probability_abs_error": 0.01684941325609257,
+    "max_mc_z_score": 3.0288107985983395,
+    "min_flat_population_risk_rho_le_half": 0.0625,
+    "sharp_growth_rows": 16,
+    "status": "supported by exact theorem-instance certificates and finite event trials",
+    "theorem_floor": 0.0625
+  },
+  "claim_2_sagd": {
+    "T_values": [
+      64,
+      128,
+      256,
+      512,
+      1024
+    ],
+    "all_theorem_conditions": true,
+    "boundary_controls": [
+      {
+        "T": 64,
+        "boundary": "r_equals_rho",
+        "eta": 0.25,
+        "max_suffix_population_risk": 0.0,
+        "min_suffix_population_risk": 0.0,
+        "radius_r": 0.1,
+        "rho": 0.1,
+        "rho_threshold": 0.04000000000000001,
+        "theorem_lower_conditions_hold": false
+      },
+      {
+        "T": 64,
+        "boundary": "rho_threshold_violated",
+        "eta": 0.25,
+        "max_suffix_population_risk": 0.0,
+        "min_suffix_population_risk": 0.0,
+        "radius_r": 0.5,
+        "rho": 0.4,
+        "rho_threshold": 0.2,
+        "theorem_lower_conditions_hold": false
+      }
+    ],
+    "dimensions_up_to": 65536,
+    "max_iterate_norm": 0.9995115994824673,
+    "min_population_to_lower_scale": 0.05536138142732779,
+    "min_suffix_population_risk_range": [
+      0.05536138142732779,
+      0.05686493335706602
+    ],
+    "saer_times_T_range": [
+      7.9999999999999964,
+      8.0
+    ],
+    "status": "supported by exact tie-broken trajectories and every suffix average",
+    "suffixes_checked": 1984
+  },
+  "claim_3_sam": {
+    "T_values": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "accepted_iid_datasets_per_scale": 10,
+    "all_radius_conditions": true,
+    "all_source_dynamic_gates": true,
+    "dimensions": [
+      1025,
+      2049,
+      4097,
+      8193
+    ],
+    "fixed_r_min_certificate_to_scale": 0.058735084726612416,
+    "full_runs": 80,
+    "max_iterate_norm": 0.4821178776807705,
+    "max_wstar_empirical_risk": 0.0,
+    "same_r2_T_exponents_in_stability_upper": true,
+    "saturated_min_certificate_to_scale": 0.05873508472661239,
+    "saturated_min_population_certificate_range": [
+      0.014683771181653097,
+      0.018994738307047777
+    ],
+    "sharp_gap_ratio_nonzero_r": [
+      0.5
+    ],
+    "sharpness_rows": 54,
+    "stability_scope": "same r^2*T dependence; the paper explicitly says nearly matches, up to eta (and beta normalization), not constant-tight",
+    "stability_upper_to_lower_scale_ratio": [
+      864.0
+    ],
+    "status": "supported by exact 1D sharpness and full high-dimensional source construction",
+    "suffixes_checked": 4800
+  },
+  "environment": {
+    "cloud_jobs": 0,
+    "cpu_brand": "unknown",
+    "cpu_only": true,
+    "cuda_visible_devices": "",
+    "external_model_calls": 0,
+    "float_dtype": "float64",
+    "gpu_used": false,
+    "machine": "x86_64",
+    "matplotlib": "3.11.0",
+    "mps_used": false,
+    "network_calls_during_reproduction": 0,
+    "numpy": "2.5.1",
+    "paid_api_calls": 0,
+    "platform": "Linux-7.0.9-arch2-1-x86_64-with-glibc2.43",
+    "python": "3.12.13 (main, Jun 23 2026, 15:18:55) [Clang 22.1.3 ]",
+    "wall_seconds": 4.937872854061425
+  },
+  "identity": {
+    "arxiv_id": "2511.03548",
+    "automatic_claims": 3,
+    "live_claims": 4,
+    "openreview_id": "u6zp8zZ8Ou",
+    "title": "Flat Minima and Generalization: Insights from Stochastic Convex Optimization"
+  },
+  "scope": {
+    "conditional_event_sampling_disclosed": true,
+    "official_code_executed": false,
+    "reason": "no official executable code accompanies the supplied arXiv source snapshot",
+    "source_audit_separated_from_execution": true,
+    "theorem_instances_not_proxy_tasks": true,
+    "universal_proof_claimed": false
+  }
+}

@@ -1,0 +1,238 @@
+
+\section{SA-ERM: Generic flat minima}\label{sec:sa_erm}
+We begin by establishing a lower bound on the generalization performance of SA-ERM.
+In particular, we construct an SCO instance where, with constant probability, there exists a minimizer of the SAER with a trivial $\Omega(1)$ population risk. This result illustrates not only the limitations of the SA-ERM algorithm in the general smooth SCO setting but also how the loss landscape affects generalization.
+The result is formalized in the following theorem.
+\begin{theorem}\label{thm: bad flat erm}
+For every $n \in \mathbb{N}$ and $0 \leq \rho \leq \tfrac{1}{2}$, let $d = 2^n + 1$ and define 
+$W = \{x \in \mathbb{R}^d : \|x\| \leq 1\}$. Then there exist an instance set $\mathcal{Z}$, a distribution $\mathcal{D}$ over $\mathcal{Z}$, and a loss function 
+$f : W \times \mathcal{Z} \to \mathbb{R}$ that is convex, $1$-Lipschitz, $1$-smooth and $\rho$-flat, such that with probability at least $\tfrac{1}{2}$ over the training set $S$, there exist 
+$w^{(1)}, w^{(2)} \in \arg\min_{w \in W} F_S(w)$ satisfying:
+\begin{enumerate}[label=(\roman*),leftmargin=*,parsep=0pt,topsep=0pt]
+    \item 
+    for every $\rad \geq 0$, it holds that $w^{(1)} \in \arg\min_{w \in W} F_S^{\rad}(w)$. In particular, if $\rad \leq \rho$ then $w^{(1)}$ is an $\rad$-flat minimum of $F_S$; 
+    \item 
+    $w^{(2)}$ is a sharp minimum, in the sense that  $F_S^{\delta}(w^{(2)}) \geq F_S(w^{(2)}) + \frac{1}{2}\delta^2$ for all $\delta > 0$.%
+    \footnote{This condition means that in every neighborhood of the minimizer there exists a point with large $F_S$. The inequality is the tightest possible: due to $1$-smoothness, any minimizer $w^\star$ of $F_S$ satisfies $F_S^{\delta}(w^\star) \leq F_S(w^\star) + \tfrac{1}{2}\delta^2$ for all $\delta > 0$.}
+    \item 
+    we have $F(w^{(1)}) - F(w^\star) = \Omega(1), \text{ while } F(w^{(2)}) - F(w^\star) = 0.$
+\end{enumerate}
+\end{theorem}
+
+\cref{thm: bad flat erm} indicates that even when the loss is convex and $\beta$-smooth, and under the arguably strongest notion of flatness (\cref{ass:flat}), a flat minimum of the empirical risk may generalize poorly, whereas a sharp minimum of the same function can generalize optimally. We provide here a proof sketch, the full prove is deferred to \cref{sec:proof_sa_erm}.
+
+
+
+
+
+\begin{proof}[sketch]
+Our construction builds on classical lower bounds in stochastic convex optimization showing the existence of an empirical risk minimizers that overfits \citep{shalev2010learnability,feldman2016generalization}. In particular, \citet{shalev2010learnability} consider an instance space $Z = \{0,1\}^{d}$ with $d = 2^n$, where examples are drawn uniformly at random. Their loss function is of the form: 
+\[
+g(w,z) = \frac{1}{2} \sum_{i=1}^{d} z(i) w(i)^2 .
+\]
+With high probability, there exists a coordinate $I$ such that all sampled examples satisfy $z(I)=0$. The corresponding basis vector $e_I$ is then an ERM but incurs large population loss, yielding a spurious empirical minimizer.
+
+A key difficulty in extending this construction is that the spurious ERM is not a flat minimizer, whereas SA-ERM favors flat solutions.
+To address this, we use the observation that the function $h:\mathbb{R}\to\mathbb{R}$ defined by
+\[
+h(x) = \tfrac{1}{2}\max(x-\rho,0)^2
+\]
+is $1$-smooth and $\rho$-flat around its minimizers for $\rho \leq \tfrac{1}{2}$.
+Composing this function with a suitable variant of the above construction yields a smooth SCO instance in which SA-ERM generalizes poorly. The resulting function is as follows:
+\[
+f(w,z) = \frac{1}{2}\left[ \sqrt{\sum_{i=1}^{d} z(i) w(i)^2 + w(d+1)^2} - \rho \right]_+^2 .
+\]
+\end{proof}
+
+
+
+
+\section{SA-GD: Algorithmically chosen flat minima}\label{sec:sa_gd}
+In the previous section, we presented in \cref{thm: bad flat erm} a hard instance showing that an existence of a flat minimizer that generalizes poorly. However, the same instance also admits flat minima that generalize well.
+This raises a natural question: does this failure extend to practical algorithms explicitly designed to seek flat minima, such as SA-GD, or do such methods tend to converge to “good” flat minima? In this section we show that the former holds, and that the lower bound from \cref{thm: bad flat erm} also applies to flat minima obtained by SA-GD. 
+
+We first establish a theorem on the optimization error of SA-GD, showing that when the perturbation radius $\rad$ is properly tuned, SA-GD minimizes the SAER objective and converges to a flat minimum of the empirical risk. 
+The result is formalized in the following theorem whose proof is deferred to \cref{sec:proof_max_opt}.
+
+\begin{theorem} \label{thm:max_opt}
+Assume that $f(w,z)$ is $\beta$-smooth, convex, non-negative and $\rho$-flat for all $z$. Let $\{w_t\}_{t=1}^T$ be produced by SA-GD for $T$ steps
+(\cref{gd_update_rule}) with $\eta \leq \ifrac{1}{4\beta}$ and $\rad >0$. For $\widehat{w} \coloneqq \frac{1}{T}\sum_{t=1}^T, w_t$ it
+holds that
+\begin{align*}
+    F_S\left(\widehat{w}\right)\leq \fsmax\left(\widehat{w}\right)
+    &\leq
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2
+    .
+\end{align*}
+In particular, when $\eta=\ifrac{1}{4\beta}$, $\|w_1-w^\star\|=O(1)$ and $\rad-\rho=O(\ifrac{1}{\sqrt{T}})$, it holds that $$
+F_S\left(\widehat{w}\right)\leq \fsmax\left(\widehat{w}\right)
+    \leq
+    O\left(\ifrac{\beta}{T}\right).$$
+\end{theorem}
+
+\cref{thm:max_opt} highlights the effect of flatness on the convergence rate of the algorithm.
+When the flatness radius $\rho$ is small, the algorithm incurs an additive $O(\rad^2)$ term in the bound on the SAER objective. In contrast, when $\rho$ is large, even for $\rad \approx \rho$, SA-GD still minimizes the SAER objective and converges to a flat empirical minimum. Moreover, although SA-GD can be viewed as gradient descent applied to a potentially non-smooth function,\footnote{For example, if $F_S(x)=x^2$, which is $\beta$-smooth for $\beta=2$, then $\fsmax(x) = (|x|+\rad)^2$ is non-smooth.} its convergence rate in this case matches that of gradient descent on smooth functions.
+
+For the proof, we first make use of the following key lemma, which establishes a regret bound for general algorithms whose update rule takes the form
+$
+w_{t+1} = w_t - \eta \nabla F_S(w_t + v_t)$, for $ \|v_t\| \leq \rad.
+$
+
+\begin{lemma}
+\label{lem:gen_regret}
+Assume that for every $z$, $f(w,z)$ is $\beta$-smooth, convex, non-negative and $\rho$-flat. Let $A$ be an algorithm that given a data set $S$, produces a sequence $\{w_t\}_{t=1}^T$ such that $
+w_{t+1} = w_t - \eta \nabla F_S(w_t+v_t),$
+ where $\{v_t\}_{t=1}^T$ are vectors such that for every $t$$, \|v_t\|\leq \rad$ and $\eta\leq 1/4\beta$. It holds that,
+ \begin{equation*}
+      \frac{1}{T}\sum_{i=1}^T F_S\left(w_t+v_t\right)-F_S(w^\star)  \leq 
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2.
+ \end{equation*}
+\end{lemma}
+
+Next, we show that even when SA-GD converges to a flat minimum, the resulting solution is not guaranteed to generalize well. To demonstrate this, we establish the following lower bound on the population risk of SA-GD.
+\begin{theorem}\label{thm: gen max sam}
+    For every $n,T\in \mathbb{N},,\eta > 0, \rad \geq 0, \rho < \rad \bigl(1 - \frac{3}{3 + \eta \sqrt{T}}\bigr)$, assume $\eta (\rad - \rho) \leq \frac{1}{\sqrt{T}}$, let $d = 2^n T$ and define $W = \{x \in \mathbb{R}^d: \|x\| \leq 1\}$. Then there exists an instance set $\mathcal{Z}$, a distribution $\mathcal{D}$ over $\mathcal{Z}$, function $f: W \times \mathcal{Z} \to \mathbb{R}$ that is convex $1$-smooth, $1$-Lipschitz and $\rho$-flat, such that for a training set $S$ it holds that with probability at least $\frac{1}{2}$, running SA-GD for $T$ steps yields for every $\tau \in [T]$ suffix average $\widehat{w}_{\tau} = \frac{1}{T-\tau +1} \sum_{t=\tau}^T w_t$:
+    $$F(\widehat{w}_{\tau}) - F(w^{\star}) = \Omega(\eta^2 (\rad - \rho)^2 T).$$
+\end{theorem}
+
+In particular, it follows that for step size $\eta \approx \ifrac{1}{\beta}$ and perturbation radius $\rad \approx \rho + \ifrac{1}{\sqrt{T}}$, the population risk of SA-GD can be as high as $\Omega(1)$, despite converging to a flat empirical minimum, as shown in \cref{thm:max_opt}.
+This result extends the poor generalization result of flat minima given in \cref{thm: bad flat erm} also to SA-ERMs that is chosen algorithmically by a natural sharpness-aware gradient method. We provide here a proof sketch, the full proof is deferred to \cref{sec:proof_gen_max_sam}.
+
+
+\begin{proof}[sketch]
+
+
+The main technical challenge in the proof is that, in the non-smooth setting, prior constructions (e.g., \cite{amir2021sgd, koren2022benign, livni2024sample, schliserman2024dimension, vansover2025rapid}) exploit non-smoothness to shape the algorithm’s dynamics, whereas in the smooth setting such an approach is not possible. Instead, our key idea is to control the sequence of maximizers $\{v_t \in \arg\max_{\|v\| \leq \rad} F_S(w_t + v)\}_{t=1}^T$ to direct the dynamics toward a spurious ERM, and make sure that the sequence $\{v_t\}_{t=1}^T$ are aligned to such directions.
+For this, we base our hard instance on the construction for SA-ERM given in \cref{thm: bad flat erm}. 
+In that construction, in the first iteration we have $v_1 = \rad e_i$, where $e_i$ corresponds to the spurious ERM.
+As a result, SA-GD makes a single step of size $\eta (\rad-\rho)$ toward this bad ERM. 
+The remaining challenge is to ensure that the algorithm takes $T$ such steps in this direction. 
+To achieve this, we replicate the construction across \(T\) mutually orthogonal subspaces, writing \(w=(w^{(1)},\dots,w^{(T)})\) with each block containing an independent copy of the hard instance. 
+In this way, since $v_t$ is chosen in a different subspace at each iteration $t$, the algorithm makes a single step in each subspace and eventually converges to a bad ERM. The resulting loss function is:
+\begin{align*}
+& f(w,z) = \frac{1}{2}\left[  
+\sqrt{
+\sum_{i=1}^{2^n}\sum_{t=1}^T
+[z(i)w^{(t)}(i)]_+^2
++ w(d)^2
+}
+-\rho
+\right]_+^2.
+\end{align*}
+\end{proof}
+Finally, we establish an upper bound for the population loss achieved by SA-GD in the following theorem.  
+
+\begin{theorem}
+\label{thm:max_gen_upper}
+For every $z$, assume that $f(w,z)$ is
+$\beta$-smooth, convex, non-negative and $\rho$-flat. Let $\{w_t\}_{t=1}^T$ be produced by SA-GD for $T$ steps
+(\cref{gd_update_rule}) with $\eta \leq \ifrac{1}{4\beta}$ and $\rad >0$. For $\widehat{w} \coloneqq \frac{1}{T}\sum_{t=1}^T w_t$, it
+holds that
+\begin{align*}
+    \mathbb E F (\widehat{w}) 
+    \leq
+    O& \bigg[\frac{\|w_1-w^\star\|^2}{\eta T} + \eta \beta^2 \rad  ^2  T+ \frac{\beta^2\eta T}{n^2} 
+      +\bigg(\beta+\frac{\beta^3\eta^2 T^2}{n^2}\bigg)\max\{\rad - \rho, 0\}^2 \bigg]
+    .
+\end{align*}
+In particular for  $T=n, \eta=O(\ifrac{1}{\beta})$, $\|w_1-w^\star\|=O(1)$ and $\rad-\rho=O(\ifrac{1}{\sqrt{T}})$ it holds that,
+\begin{align*}
+    \mathbb E F \left(\widehat{w}\right)= 
+    O\left(\frac{\beta}{n}+ \beta\rad^2 n \right).
+\end{align*}
+\end{theorem}
+We note that when $\rad = 0$, the bound in \cref{thm:max_gen_upper} coincides with the risk bounds of \citet{nikolakakis2022beyond, lei2020fine} for GD and SGD in convex, smooth, realizable settings. However, when $\rad > 0$, our bound contains an additional excess term of $\eta \beta^2 r^2 T$ compared to GD and SGD. This term nearly matches our lower bound in \cref{thm: gen max sam}, up to its dependence on $\eta$ and $\rho$.
+
+The proof is deferred to \cref{sec:proof_max_gen_upper} and relies on a leave-one-out algorithmic stability argument. Specifically, we show that replacing a single training sample results in only a small change in the learned model, which in turn implies a small change in the loss. This stability property allows us to bound the generalization gap, that is, the difference between the empirical risk and the population loss \cite{bousquet2002stability,hardt2016train}. 
+
+
+
+\section{SAM: Practically chosen flat minima} \label{sec:sam}
+
+Finally, we analyze SAM, a well-studied and practically relevant algorithm introduced by \cite{foret2021sharpness} as a computationally efficient approximation of SA-GD. For this algorithm, we establish the following bound on the empirical risk. 
+Similarly to SA-GD, the flatness of the empirical risk plays a significant role in the convergence of SAM, 
+achieving fast convergence rates the function is $\rho$-flat and $\rad\leq \rho + \ifrac{1}{\sqrt{T}}$.
+
+\begin{theorem}
+\label{thm:asc_opt_upper}
+For every $z$, assume that $f(w,z)$ is
+$\beta$-smooth, convex, non-negative and $\rho$-flat. Let $\{w_t\}_{t=1}^T$ be produced by SAM for $T$ steps
+(\cref{gd_update_rule}) with $\eta \leq \ifrac{1}{4\beta}$ and $\rad >0$. For $\widehat{w} \coloneqq \frac{1}{T}\sum_{t=1}^T w_t$, it
+holds that
+\begin{align*}
+    F_S\left(\widehat{w}\right)
+    &\leq
+    \frac{\|w_1-w^\star\|^2}{\eta T} + 4\beta\max\{\rad - \rho, 0\}^2
+    .
+\end{align*}
+In particular, if $\eta=\frac{1}{4\beta}$, $\|w_1-w^\star\|=O(1),\rad-\rho=O(\ifrac{1}{\sqrt{T}})$, $F_S\left(\widehat{w}\right)
+    \leq
+    O(\ifrac{\beta}{T}).$
+\end{theorem}
+The proof is deferred to \cref{proof_asc_opt_upper}. We note that \cref{thm:asc_opt_upper} establishes convergence rates in terms of the empirical risk. 
+A natural question is whether SAM achieves similar rates
+for the SAER. 
+In the following theorem, we show that this is not the case: SAM might incur an additional term of $\Omega(\rad^2)$ in the convergence rate for the SAER, even for $\rho$-flat functions. 
+This demonstrates that SAM can converge to a non-flat minimum, even when a $\rho$-flat minimum exists. 
+
+\begin{theorem}\label{thm:ascent_opt_non_flate}
+    For every $\eta> 0, n \in \mathbb{N}, \rad,\rho \leq \frac{1}{2}$, $W = [-1,1]$ there exists an instance set $\mathcal{Z}$ and a loss function $F_S:W \times \mathcal{Z} \to \mathbb{R}$ that is non-negative, convex, $1$-Lipschitz, $1$-smooth and $\rho$-flat such that running SAM on $F_S$ for $T$ steps holds, for any suffix average $\widehat{w}_{\tau} = \frac{1}{T-\tau+1}\sum_{t = \tau}^T w_t$,
+    $$\forall ~ 0\leq\rad \leq \tfrac{1}{2}: \qquad \fsmax(\widehat{w}_{\tau}) - \fsmax(w^{\star}) = \Omega(\rad^2),$$
+    that is, SAM converges to a sharp minimum.
+\end{theorem}
+The proof of \cref{thm:ascent_opt_non_flate} is deferred to \cref{sec:ascent_opt_non_flate}.
+Finally, we turn to discuss the generalization guarantees of SAM.
+In the following lower bound, we show that SAM can exhibit poor generalization in SCO under the realizable setting ($\rho = 0$), leaving the $\rho$-flat case ($\rho \gg 0$) for future work. 
+\begin{theorem}\label{thm: gen asc sam}
+    Given $n \geq 6 ,T \geq 6, \eta,\rad>0$ such that $\eta\rad \leq 1/2\sqrt{T}$, let $d = 2^n T$ and $W = \{w \in \mathbb{R}^d: \|w\| \leq 1\}$. 
+    Then there exists an instance set $\mathcal{Z}$, a distribution $\mathcal{D}$ over $\mathcal{Z}$, a convex $6$-smooth $6$-Lipschitz and realizable function $f: W \times \mathcal{Z} \to \mathbb{R}$ such that for a training set $S$ with probability at least $\frac{1}{3}$ running SAM for $T$ steps with trajectory $\{w_t\}_{t=1}^T$, yields for every $\tau \in [T]$ suffix average $\widehat{w}_{\tau} = \frac{1}{T-\tau +1} \sum_{t=\tau}^T w_t$:
+    \[F(\widehat{w}_{\tau}) - F(w^{\star}) = \Omega(\eta^2 \rad^2 T).\]
+\end{theorem}
+We provide here a proof sketch, the full proof is deferred to \cref{sec:proof_gen_asc_sam}.
+\begin{proof}[sketch]
+As with the construction for SA-GD in \cref{thm: gen max sam} we begin with a loss that admits a spurious ERM and $T$ orthogonal subspaces, 
+$$f_1(w,z) = \frac12\sum_{i=1}^{2^n}\sum_{t=2}^{T} z(i)\,w^{(i)}(t)^2.$$ 
+The main difficulty in this context is that the algorithm is initialized at $w_1 = 0$, which, in previous constructions,  is already a minimizer of the empirical risk. As a result, if we were to apply the same approach, SAM would remain at initialization throughout training and thus generalize well.  
+
+To overcome this challenge, our key idea is to exploit the normalization of the ascent step, which can amplify small perturbations into meaningful progress. We begin by introducing a sufficiently small linear loss in the first orthogonal subspace,
+\[
+f_2(w,z) = \frac{\gamma}{2}\,[\,v_z^\top w^{(1)} + \delta_1\,]_+^{2},
+\]
+for an appropriate choice of \(v_z\) depending on the samples \(z\), with small \(\delta_1,\gamma>0\). 
+Although the gradients of this function at the initialization point are small, the normalization step amplifies them, producing a progress of $\eta \rad$ toward the bad ERM in this subspace. To extend this effect across \(T\) orthogonal subspaces, we design a chaining mechanism that couples consecutive subspaces, such that progress in one subspace activates progress in the next. This is achieved via the following function:
+\begin{align*}
+    f_3(w) =  \tfrac{1}{2}\sum_{i=1}^{2^n}\sum_{t=2}^{T} 
+\left[w^{(i)}(t)-\delta_t\cdot w^{(i)}(t-1),0\right]_+^{\!2},
+\end{align*}
+for an appropriate choice of \(\{\delta_t\}_{t=2}^T\). This construction ensures that the algorithm makes progress of order \(\eta \rad\) in each of \(T\) distinct subspaces, ultimately guiding the iterates toward a spurious ERM that generalizes poorly. 
+The final loss function is therefore
+\begin{align*}
+f(w,z) = f_1(w,z) + f_2(w) + f_3(w,z). \tag*{\qedhere}
+\end{align*}  
+\end{proof}
+
+Finally, we establish an upper bound for the population loss achieved by SAM in the following theorem. 
+
+\begin{theorem}
+\label{thm:ascent_gen_upper}
+For every $z$, assume that $f(w,z)$ is
+$\beta$-smooth, convex, non-negative and $\rho$-flat. Let $\{w_t\}_{t=1}^T$ be produced by SAM for $T$ steps
+(\cref{asc_update_rule}) with $\eta \leq \ifrac{1}{4\beta}$ and $\rad >0$. For $\widehat{w} \coloneqq \frac{1}{T}\sum_{t=1}^T w_t$, it
+holds that\begin{align*}
+    \mathbb E F (\widehat{w}) 
+    \leq
+    O& \bigg[\frac{\|w_1-w^\star\|^2}{\eta T} + \eta \beta^2 \rad  ^2  T+ \frac{\beta^2\eta T}{n^2} +\bigg(\beta+\frac{\beta^3\eta^2 T^2}{n^2}\bigg)\max\{\rad - \rho, 0\}^2 \bigg]
+    .
+\end{align*}
+In particular for  $T=n, \eta=O(\ifrac{1}{\beta})$, $\|w_1-w^\star\|=O(1)$ and $\rad-\rho=O(\ifrac{1}{\sqrt{T}})$ it holds that,
+\begin{align*}
+     \mathbb E F \left(\widehat{w}\right) =O\left(\frac{\beta}{n}+ \beta\rad^2 n \right).
+\end{align*}
+\end{theorem}
+
+As in the bound for SA-GD, we note that when $\rad = 0$, the bound in \cref{thm:max_gen_upper} coincides with the risk bounds of \citet{ lei2020fine,nikolakakis2022beyond} for GD and SGD in convex, smooth, realizable settings. However, when $\rad > 0$, our bound contains an additional excess term of $\eta \beta^2 r^2 T$ relative to GD and SGD. This term nearly matches our lower bound in \cref{thm: gen asc sam}, up to its dependence on $\eta$.
+
+
+The proof follows from an algorithmic stability analysis, similar to that in
+\cref{thm:max_gen_upper};, and is given in \cref{sec:proof_ascent_gen_upper}.
+

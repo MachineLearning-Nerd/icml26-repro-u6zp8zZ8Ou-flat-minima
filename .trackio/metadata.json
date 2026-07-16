@@ -1,0 +1,82 @@
+{
+  "space_id": "DineshAI/u6zp8zZ8Ou",
+  "emoji": "🎯",
+  "created_at": "2026-07-16T15:30:17+00:00",
+  "last_page": "reproduction-artifact-tests-and-hashes",
+  "local_artifacts": [
+    "flat-minima-sco-repro/flat-minima-cpu-reproduction:v0"
+  ],
+  "paper": {
+    "arxiv_id": "2511.03548"
+  },
+  "tags": [
+    "icml2026-repro",
+    "paper-u6zp8zZ8Ou"
+  ],
+  "autosync": true,
+  "local_path_artifacts": [
+    {
+      "path": "outputs/full/sam_generalization_suffixes.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sam_generalization_suffixes.csv",
+      "size": 691449,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/sagd_suffix_dynamics.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sagd_suffix_dynamics.csv",
+      "size": 275764,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/saerm_flat_sharp_trials.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/saerm_flat_sharp_trials.csv",
+      "size": 78630,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/sam_generalization_runs.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sam_generalization_runs.csv",
+      "size": 21204,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/sam_sharpness.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sam_sharpness.csv",
+      "size": 4286,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/stability_scaling.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/stability_scaling.csv",
+      "size": 2176,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/sam_construction_parameters.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sam_construction_parameters.csv",
+      "size": 1569,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/saerm_sharpness_certificate.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/saerm_sharpness_certificate.csv",
+      "size": 1389,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/sagd_scaling.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/sagd_scaling.csv",
+      "size": 1363,
+      "artifact_type": "dataset"
+    },
+    {
+      "path": "outputs/full/event_probabilities.csv",
+      "abs_path": "/home/dineshai/Drives/Code/AllCode/ReproduceICML/papers/icml26-repro-u6zp8zZ8Ou-flat-minima/outputs/full/event_probabilities.csv",
+      "size": 836,
+      "artifact_type": "dataset"
+    }
+  ],
+  "private": false,
+  "local_dashboards": {},
+  "artifacts_bucket": "DineshAI/u6zp8zZ8Ou-artifacts"
+}

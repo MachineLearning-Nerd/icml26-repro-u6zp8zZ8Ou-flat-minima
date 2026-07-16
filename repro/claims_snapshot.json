@@ -1,0 +1,17 @@
+{
+  "openreview_id": "u6zp8zZ8Ou",
+  "arxiv_id": "2511.03548",
+  "title": "Flat Minima and Generalization: Insights from Stochastic Convex Optimization",
+  "automatic_claims": [
+    "In non-negative, beta-smooth stochastic convex optimization, flat empirical minima can incur Omega(1) population risk while sharp minima generalize optimally.",
+    "SA-GD converges to a flat minimum at a fast rate, yet its solution's population risk can still be Omega(1).",
+    "SAM can converge to a sharp minimum and also incur Omega(1) population risk; matching stability-based upper bounds are established."
+  ],
+  "live_claims": [
+    "In non-negative, beta-smooth stochastic convex optimization under a strong flatness condition, flat empirical minima can incur population risk of Omega(1) while sharp minima in the same setting generalize optimally (Theorem 1, Section 3.1).",
+    "SA-GD converges to a flat (rho-flat) empirical minimum at rate O(1/eta T) on the empirical risk, but its population risk lower bound is Omega(eta^2 (r-rho)^2 T), showing fast flat-minimum convergence does not guarantee generalization (Theorem 2 and Theorem 3, Section 3.2).",
+    "SAM achieves the same empirical convergence rate as SA-GD, O(1/eta T + beta max{r-rho,0}^2), yet can converge to a sharp (non-flat) minimizer even when rho-flat minimizers exist, exhibiting a sharpness-empirical-risk gap of Omega(r^2) (Theorem 4 and Theorem 5, Section 3.3).",
+    "Under realizability (rho=0), SAM's population risk has a lower bound of Omega(eta^2 r^2 T), matching stability-based upper bounds established via algorithmic stability (Theorem 6 and Theorem 8, Appendix A)."
+  ],
+  "catalog_numbering_note": "The live catalog's substance is present, but its final two theorem-number pairs are shifted relative to arXiv 2511.03548: SAM empirical convergence and sharpness are PDF Theorems 5 and 6; the SAM population lower and stability upper bounds are PDF Theorems 7 and 8."
+}
